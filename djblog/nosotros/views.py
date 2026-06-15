@@ -6,25 +6,28 @@ from django.shortcuts import render
 from django.views.generic.base import View
 
 
-class HelloWorld(View):
+class nosotros(View):
     def get(self, request):
         # Array de objetos (lista de diccionarios)
         data = [
             {
                 'nombre': 'Pepe Lepon',
                 'edad': 30,
+                'descripcion': 'Desarrollador backend con experiencia en Python y Django.',
                 'tecnologias': ['Python', 'Django', 'NextJS', 'React'],
                 'activo': True
             },
             {
-                'nombre': 'Maria Gomez',
+                'nombre': 'Lupe Lepon',
                 'edad': 25,
+                'descripcion': 'Desarrolladora frontend especializada en React y Angular.',
                 'tecnologias': ['Java', 'Spring Boot', 'Angular'],
                 'activo': True
             },
             {
-                'nombre': 'Carlos Lopez',
+                'nombre': 'Roki Lepon',
                 'edad': 35,
+                'descripcion':  'Desarrolladora frontend especializada en Vue y NodeJS.',
                 'tecnologias': ['JavaScript', 'Vue', 'NodeJS'],
                 'activo': False
             }
@@ -35,5 +38,5 @@ class HelloWorld(View):
             'data': data
         }
 
-        # ✅ CORREGIDO: usar context, no data
+        #  usar context, no data
         return render(request, 'nosotros.html', context=context)

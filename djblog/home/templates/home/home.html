@@ -213,7 +213,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="nosotros">Nosotros</a></li>
                     <li class="nav-item"><a class="nav-link" href="#testimonios">Testimonios</a></li>
                     <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
@@ -264,32 +264,7 @@
         </div>
     </section>
 
-    <!-- Nosotros con Contadores Dinámicos -->
-    <section id="nosotros" class="section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600" alt="Equipo" class="img-fluid rounded-3 shadow">
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h2 class="section-title text-start">Sobre Nosotros</h2>
-                    <p class="lead">Somos un equipo apasionado por la tecnología y la innovación.</p>
-                    <p>Con más de 10 años de experiencia, hemos ayudado a cientos de empresas a transformar sus ideas en soluciones digitales exitosas.</p>
-                    <div class="row mt-4 g-3">
-                        {% for counter in counters %}
-                        <div class="col-md-4">
-                            <div class="counter-box">
-                                <i class="fas {{ counter.icon }} fa-2x text-primary"></i>
-                                <div class="counter-number" data-target="{{ counter.value }}">0</div>
-                                <p>{{ counter.label }}</p>
-                            </div>
-                        </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
     <!-- Testimonios Dinámicos -->
     <section id="testimonios" class="section bg-light">
@@ -430,7 +405,7 @@
                     <ul class="list-unstyled">
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="nosotros">Nosotros</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
