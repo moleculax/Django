@@ -8,24 +8,8 @@ Proyecto web desarrollado con Django, un framework de alto nivel para Python que
 
 # Manual de Django - Comandos Esenciales
 
-## 📋 Índice
 
-1. [Entornos Virtuales](#entornos-virtuales)
-2. [Instalación de Django](#instalación-de-django)
-3. [Crear un Proyecto](#crear-un-proyecto)
-4. [Crear una Aplicación](#crear-una-aplicación)
-5. [Ejecutar el Servidor](#ejecutar-el-servidor)
-6. [Migraciones y Base de Datos](#migraciones-y-base-de-datos)
-7. [Panel de Administración](#panel-de-administración)
-8. [Crear Superusuario](#crear-superusuario)
-9. [Comandos Útiles](#comandos-útiles)
-10. [Estructura del Proyecto](#estructura-del-proyecto)
-11. [Configuración Básica](#configuración-básica)
-12. [Solución de Problemas](#solución-de-problemas)
-
----
-
-## 🐍 Entornos Virtuales
+##  Entornos Virtuales
 
 ### Crear entorno virtual
 
