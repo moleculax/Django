@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Posts</title>
+</head>
+<body>
+<h1>Hello World</h1>
+<p>Este es un mensaje de bienvenida. {{ name }} {{years}}</p>
+<!--<p>Estos son mis lenguajes de programación: {{ codes|join:", " }}</p>-->
+<h5>Mis lenguajes</h5>
+<ul>
+    {% for code in codes %}
+        <li>{{ code }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
