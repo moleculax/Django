@@ -6,10 +6,9 @@ Proyecto web desarrollado con Django, un framework de alto nivel para Python que
 
 **En Desarrollo...**
 
-# Manual de Django - Comandos Esenciales
+# Django - Comandos Esenciales
 
 
-##  Entornos Virtuales
 
 ### Crear entorno virtual
 
