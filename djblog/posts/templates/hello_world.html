@@ -1,19 +1,184 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Posts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Personas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .card-header .edad {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .tecnologias {
+            margin-bottom: 15px;
+        }
+
+        .tecnologias h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #333;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin: 3px;
+            transition: all 0.3s;
+        }
+
+        .tech-badge:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .estado {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+
+        .estado-label {
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .activo {
+            color: green;
+            font-weight: bold;
+        }
+
+        .inactivo {
+            color: red;
+            font-weight: bold;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: white;
+            font-size: 1.2rem;
+            padding: 50px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1>Hello World</h1>
-<p>Este es un mensaje de bienvenida. {{ name }} {{years}}</p>
-<!--<p>Estos son mis lenguajes de programación: {{ codes|join:", " }}</p>-->
-<h5>Mis lenguajes</h5>
-<ul>
-    {% for code in codes %}
-        <li>{{ code }}</li>
-    {% endfor %}
-</ul>
+    <div class="container">
+        <h1>👥 Lista de Personas</h1>
+
+        <div class="cards-container">
+            {% for persona in data %}
+            <div class="card">
+                <div class="card-header">
+                    <h2>{{ persona.nombre }}</h2>
+                    <p class="edad">🎂 {{ persona.edad }} años</p>
+                </div>
+                <div class="card-body">
+                    <div class="tecnologias">
+                        <h4>💻 Tecnologías</h4>
+                        <div>
+                            {% for tech in persona.tecnologias %}
+                                <span class="tech-badge">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="estado">
+                        <span class="estado-label">📌 Estado:</span>
+                        <span class="{% if persona.activo %}activo{% else %}inactivo{% endif %}">
+                            {% if persona.activo %}
+                                ✅ Activo
+                            {% else %}
+                                ❌ Inactivo
+                            {% endif %}
+                        </span>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="empty-message">
+                🚫 No hay personas registradas
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </body>
 </html>
