@@ -18,14 +18,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from posts.views import HelloWorld
+# from posts.views import HelloWorld
 from home.views import HomeView
 from nosotros.views import nosotros
+from posts.api.views import PostAPIView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("posts/", HelloWorld.as_view()),
+   # / path("posts/", HelloWorld.as_view()),
     path("nosotros/", nosotros.as_view()),
+    path("api/posts/", PostAPIView.as_view()),
     path('', HomeView.as_view(), name='home'),
 
 ]
