@@ -6,7 +6,7 @@ Proyecto (ejemplo) desarrollado con Django, un framework de alto nivel para Pyth
 
 **En Desarrollo...**
 
-# Django - Comandos Esenciales
+# Django -  Esencial
 
 
 
@@ -15,11 +15,6 @@ Proyecto (ejemplo) desarrollado con Django, un framework de alto nivel para Pyth
 ```bash
 # Linux / macOS
 python3 -m venv env
-
-# Windows
-python -m venv env
-
-
 
 ```
 Activar entorno virtual
