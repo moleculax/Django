@@ -14,16 +14,17 @@ from posts.models import Post
 # PARA AGREGAR PERMISOS A SOLO LOS LOGEADOS
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
 from posts.api.permissions import IsAdminOrReadOnly
-# =========================================================
-# ============ ESTO PERMITE CREAR EL CRUD COMPLETO ======================
+# =========================================================================================================
+# ============ ESTO PERMITE CREAR EL CRUD COMPLETO ========================================================
 class PostModelViewSet(viewsets.ModelViewSet):
     # permission_classes = (IsAuthenticated)
-# ======AQUI PODEMOS AGREGAR VARIOS PERMISOS DESPUES DE LA (,) ==========
+# ======AQUI PODEMOS AGREGAR VARIOS PERMISOS DESPUES DE LA (,) ============================================
     permission_classes = [IsAdminOrReadOnly,]
+# =========================================================================================================
     serializer_class = PostSerializer
     queryset = Post.objects.all()
-# ======================================================================
-# ======================== RUTA PERSONALIZADA PARA BUSCAR POR TÍTULO ===============================
+# =========================================================================================================
+# ===== RUTA PERSONALIZADA PARA BUSCAR POR TÍTULO SE PUEDEN AGREGAR MAS OPCIONES DE BUSQUEDA================
 #     http: // localhost: 8000 / api / posts / title / Que % 20es % 20Django /
     @action(detail=False, methods=['get'], url_path='title/(?P<title>.+)')
     def retrieve_by_title(self, request, title=None):
