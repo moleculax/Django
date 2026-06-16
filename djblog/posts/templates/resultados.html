@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Resultados</title>
+    <style>
+        /* ===== RESET ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            color: #1a1a2e;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ===== HEADER ===== */
+        .blog-header {
+            text-align: center;
+            padding: 40px 20px 30px;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .blog-header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .blog-header h1 i {
+            font-style: normal;
+        }
+
+        .blog-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+
+        .blog-header .total-posts {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 6px 20px;
+            border-radius: 30px;
+            margin-top: 12px;
+            font-size: 0.95rem;
+        }
+
+        /* ===== POSTS ===== */
+        .posts-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+        }
+
+        .post-card {
+            background: white;
+            border-radius: 16px;
+            padding: 25px 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border-left: 5px solid #667eea;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-content {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .post-content h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+
+        .post-content h2 a {
+            color: #1a1a2e;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .post-content h2 a:hover {
+            color: #667eea;
+        }
+
+        .post-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: #888;
+            margin-top: 6px;
+        }
+
+        .post-meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .post-description {
+            margin-top: 12px;
+            color: #444;
+            font-size: 0.98rem;
+        }
+
+        .post-status {
+            margin-top: 12px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-active {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .badge-inactive {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .badge-order {
+            background: #e9ecef;
+            color: #495057;
+            font-size: 0.7rem;
+        }
+
+        .post-id {
+            font-size: 0.8rem;
+            color: #aaa;
+            background: #f8f9fa;
+            padding: 4px 12px;
+            border-radius: 30px;
+            white-space: nowrap;
+        }
+
+        /* ===== ERROR ===== */
+        .error-box {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .error-box .icon {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+        }
+
+        .error-box h2 {
+            font-size: 1.8rem;
+            color: #dc3545;
+            margin-bottom: 8px;
+        }
+
+        .error-box p {
+            color: #666;
+        }
+
+        /* ===== EMPTY ===== */
+        .empty-box {
+            text-align: center;
+            padding: 60px 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        .empty-box .icon {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+        }
+
+        .empty-box h2 {
+            font-size: 1.6rem;
+            color: #666;
+        }
+
+        /* ===== FOOTER ===== */
+        .blog-footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px 0 10px;
+            border-top: 1px solid #e0e0e0;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .blog-header h1 {
+                font-size: 2rem;
+            }
+
+            .post-card {
+                padding: 20px;
+                flex-direction: column;
+            }
+
+            .post-id {
+                margin-top: 10px;
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ===== HEADER ===== -->
+        <header class="blog-header">
+            <h1>📝 Blog</h1>
+            <p>Resultados de los posts</p>
+            {% if not error %}
+                <span class="total-posts">📄 {{ resultados|length }} posts publicados</span>
+            {% endif %}
+        </header>
+
+        <!-- ===== CONTENIDO ===== -->
+        {% if error %}
+
+            <div class="error-box">
+                <div class="icon">⚠️</div>
+                <h2>Error</h2>
+                <p>{{ error }}</p>
+            </div>
+
+        {% else %}
+
+            {% if resultados %}
+
+                <div class="posts-grid">
+                    {% for post in resultados %}
+                    <article class="post-card">
+
+                        <div class="post-content">
+                            <h2>
+                                <a href="#">{{ post.title }}</a>
+                            </h2>
+
+                            <div class="post-meta">
+                                <span>🆔 ID: {{ post.id }}</span>
+                                <span>📌 Orden: {{ post.order|default:"-" }}</span>
+                                <span>📅 Creado: {{ post.created_at|default:"-" }}</span>
+                            </div>
+
+                            <div class="post-description">
+                                {{ post.description|truncatechars:120 }}
+                            </div>
+
+                            <div class="post-status">
+                                {% if post.status %}
+                                    <span class="badge badge-active">✅ Activo</span>
+                                {% else %}
+                                    <span class="badge badge-inactive">❌ Inactivo</span>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </article>
+                    {% endfor %}
+                </div>
+
+            {% else %}
+
+                <div class="empty-box">
+                    <div class="icon">📭</div>
+                    <h2>No hay posts</h2>
+                    <p>Todavía no se han publicado entradas en el blog.</p>
+                </div>
+
+            {% endif %}
+
+        {% endif %}
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="blog-footer">
+            <p>&copy; 2026 Mi Blog · Todos los derechos reservados</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

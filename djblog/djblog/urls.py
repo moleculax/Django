@@ -29,6 +29,8 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, Spec
 from django.conf import settings
 from django.conf.urls.static import static
 
+import posts.views as views
+
 urlpatterns = [
     path("admin/", admin.site.urls),
    # / path("posts/", HelloWorld.as_view()),
@@ -41,6 +43,9 @@ urlpatterns = [
     # Swagger UI
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+
+    # RUTA PARA RESULTADOS
+    path('posts/resultados/', views.resultados_posts, name='resultados_posts'),
 
 ]
 

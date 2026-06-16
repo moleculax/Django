@@ -4,6 +4,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.generic.base import View
+import json
+from urllib.request import urlopen
 
 
 class HelloWorld(View):
@@ -37,3 +39,22 @@ class HelloWorld(View):
 
         # ✅ CORREGIDO: usar context, no data
         return render(request, 'nosotros.html', context=context)
+
+
+# ============================================================
+# ✅ FUNCIÓN FUERA DE LA CLASE
+# ============================================================
+def resultados_posts(request):
+    try:
+        with urlopen('http://localhost:8000/api/posts/') as response:
+            data = json.loads(response.read().decode('utf-8'))
+        context = {
+            'resultados': data
+        }
+        return render(request, 'resultados.html', context)
+    except Exception as e:
+        context = {
+            'error': str(e),
+            'resultados': []
+        }
+        return render(request, 'resultados.html', context)

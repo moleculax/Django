@@ -3,6 +3,9 @@ from urllib import request
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+# Convierte automáticamente un diccionario de Python (o datos serializables) en JSON válido.
+from django.http import JsonResponse
+# ==========================================================================================
 #IMPORTO EL SERIALIZERS CREADO
 from posts.api.serializers import PostSerializer
 # IMPORTO VIEWSET
@@ -15,6 +18,8 @@ from posts.models import Post
 from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
 from posts.api.permissions import IsAdminOrReadOnly
 # =========================================================================================================
+
+
 # ============ ESTO PERMITE CREAR EL CRUD COMPLETO ========================================================
 class PostModelViewSet(viewsets.ModelViewSet):
     # permission_classes = (IsAuthenticated)
@@ -38,7 +43,7 @@ class PostModelViewSet(viewsets.ModelViewSet):
                 data={'error': 'Post no encontrado'}
             )
 
-
+# =====================================================================
 
 # COMENTE TODO ESTO PORQUE USARE MODELVIEWSET
 """ 
