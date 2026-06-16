@@ -24,6 +24,10 @@ from nosotros.views import nosotros
 # from posts.api.views import PostAPIView
 # ESTO FUE CREADO EN router.py
 from posts.api.router import router_post
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -34,7 +38,16 @@ urlpatterns = [
     # AGREGO LAS RUTAS DE LOS VIEWSETS
     path('api/', include(router_post.urls)),
 
+    # Swagger UI
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/docs/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+
 ]
+
+#  Servir archivos estáticos en desarrollo
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
 

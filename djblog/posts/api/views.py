@@ -12,6 +12,29 @@ import posts
 # TRAEMOS EL MODELO
 from posts.models import Post
 
+# ============ ESTO PERMITE CREAR EL CRUD COMPLETO ======================
+class PostModelViewSet(viewsets.ModelViewSet):
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()
+# ======================================================================
+# ======================== RUTA PERSONALIZADA PARA BUSCAR POR TÍTULO ===============================
+#     http: // localhost: 8000 / api / posts / title / Que % 20es % 20Django /
+    @action(detail=False, methods=['get'], url_path='title/(?P<title>.+)')
+    def retrieve_by_title(self, request, title=None):
+        try:
+            post = Post.objects.get(title=title)
+            serializer = self.get_serializer(post)
+            return Response(status=status.HTTP_200_OK, data=serializer.data)
+        except Post.DoesNotExist:
+            return Response(
+                status=status.HTTP_404_NOT_FOUND,
+                data={'error': 'Post no encontrado'}
+            )
+
+
+
+# COMENTE TODO ESTO PORQUE USARE MODELVIEWSET
+""" 
 # ======== ESTO FUNCIONA PERFECTO LO COMENTO PORQUE USARE VIEWSET =================================
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
@@ -73,3 +96,5 @@ class PostViewSet(viewsets.ModelViewSet):
 #         serializer.save()
 #         return Response(status=status.HTTP_201_CREATED, data=serializer.data)
 # # ================================================================================================
+
+"""
