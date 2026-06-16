@@ -6,7 +6,8 @@ from django.shortcuts import render
 from django.views.generic.base import View
 import json
 from urllib.request import urlopen
-
+# IMPORTO LAS CONSTANTE
+from djblog.constants import API_POSTS_URL
 
 class HelloWorld(View):
     def get(self, request):
@@ -42,11 +43,12 @@ class HelloWorld(View):
 
 
 # ============================================================
-# ✅ FUNCIÓN FUERA DE LA CLASE
+# FUNCIÓN FUERA DE LA CLASE
+# MUESTRA RESULTDOS DEL ENDPOINT EN HTML
 # ============================================================
 def resultados_posts(request):
     try:
-        with urlopen('http://localhost:8000/api/posts/') as response:
+        with urlopen(API_POSTS_URL) as response:
             data = json.loads(response.read().decode('utf-8'))
         context = {
             'resultados': data
