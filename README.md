@@ -78,7 +78,13 @@ nombre_proyecto/
  python3 manage.py migrate  
  ```  
  
-**Para REST**
+ 
+**PARA REST FRAMEWORK**
+```
+pip install djangorestframework
+pip install markdown       # Markdown support for the browsable API.
+pip install django-filter  # Filtering support
+```
 
 Django Rest [www.django-rest-framework.org](https://www.django-rest-framework.org/) 
 
