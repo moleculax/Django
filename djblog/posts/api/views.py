@@ -11,9 +11,15 @@ from rest_framework.decorators import action
 import posts
 # TRAEMOS EL MODELO
 from posts.models import Post
-
+# PARA AGREGAR PERMISOS A SOLO LOS LOGEADOS
+from rest_framework.permissions import IsAuthenticated, IsAdminUser, IsAuthenticatedOrReadOnly
+from posts.api.permissions import IsAdminOrReadOnly
+# =========================================================
 # ============ ESTO PERMITE CREAR EL CRUD COMPLETO ======================
 class PostModelViewSet(viewsets.ModelViewSet):
+    # permission_classes = (IsAuthenticated)
+# ======AQUI PODEMOS AGREGAR VARIOS PERMISOS DESPUES DE LA (,) ==========
+    permission_classes = [IsAdminOrReadOnly,]
     serializer_class = PostSerializer
     queryset = Post.objects.all()
 # ======================================================================
