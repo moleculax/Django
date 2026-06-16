@@ -6,3 +6,4 @@ from posts.api.views import PostViewSet
 
 router_post = DefaultRouter()
 router_post.register(prefix='posts', viewset=PostViewSet, basename='post')
+
