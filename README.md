@@ -71,6 +71,15 @@ nombre_proyecto/
     └── wsgi.py
     
 ```
-    
+
+**PARA EJECUTAR EL MODELO Y  CREAR LA TABLAS**
+```
+ python3 manage.py makemigrations
+ python3 manage.py migrate  
+ ```  
+ 
+**Para REST**
+
+Django Rest [www.django-rest-framework.org](https://www.django-rest-framework.org/) 
 
 Web: [Moleculax App](https://moleculaxapp.vercel.app/)
