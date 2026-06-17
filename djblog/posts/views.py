@@ -7,39 +7,65 @@ from django.views.generic.base import View
 import json
 from urllib.request import urlopen
 # IMPORTO LAS CONSTANTE
-from djblog.constants import API_POSTS_URL
+from djblog.constante.constants import API_POSTS_URL
+# AQUI ESTA VINCULADO el archivo json que esta en data/
+from djblog.constante.constants import JSON_DATA_PATH
 
 class HelloWorld(View):
     def get(self, request):
-        # Array de objetos (lista de diccionarios)
-        data = [
-            {
-                'nombre': 'Pepe Lepon',
-                'edad': 30,
-                'tecnologias': ['Python', 'Django', 'NextJS', 'React'],
-                'activo': True
-            },
-            {
-                'nombre': 'Maria Gomez',
-                'edad': 25,
-                'tecnologias': ['Java', 'Spring Boot', 'Angular'],
-                'activo': True
-            },
-            {
-                'nombre': 'Carlos Lopez',
-                'edad': 35,
-                'tecnologias': ['JavaScript', 'Vue', 'NodeJS'],
-                'activo': False
-            }
-        ]
+
+        # ============================================================
+        # LEER DATOS DESDE ARCHIVO JSON (personas.json)
+        # ============================================================
+        try:
+            # Abrir y leer el archivo JSON
+            with open(JSON_DATA_PATH, 'r', encoding='utf-8') as file:
+                data = json.load(file)
+        except FileNotFoundError:
+            # Si no existe el archivo, mostrar error
+            data = []
+        except json.JSONDecodeError:
+            # Si el JSON está mal formado
+            data = []
 
         # context debe ser un diccionario con clave 'data'
         context = {
             'data': data
         }
 
-        # ✅ CORREGIDO: usar context, no data
         return render(request, 'nosotros.html', context=context)
+
+
+        # # Array de objetos (lista de diccionarios)
+        #
+        # data = [
+        #     {
+        #         'nombre': 'Pepe Lepon',
+        #         'edad': 30,
+        #         'tecnologias': ['Python', 'Django', 'NextJS', 'React'],
+        #         'activo': True
+        #     },
+        #     {
+        #         'nombre': 'Maria Gomez',
+        #         'edad': 25,
+        #         'tecnologias': ['Java', 'Spring Boot', 'Angular'],
+        #         'activo': True
+        #     },
+        #     {
+        #         'nombre': 'Carlos Lopez',
+        #         'edad': 35,
+        #         'tecnologias': ['JavaScript', 'Vue', 'NodeJS'],
+        #         'activo': False
+        #     }
+        # ]
+        #
+        # # context debe ser un diccionario con clave 'data'
+        # context = {
+        #     'data': data
+        # }
+        #
+        # # ✅ CORREGIDO: usar context, no data
+        # return render(request, 'nosotros.html', context=context)
 
 
 # ============================================================

@@ -6,13 +6,13 @@
         "activo": true
     },
     {
-        "nombre": "Maria Gomez",
+        "nombre": "Roli Lepon",
         "edad": 25,
         "tecnologias": ["Java", "Spring Boot", "Angular"],
         "activo": true
     },
     {
-        "nombre": "Carlos Lopez",
+        "nombre": "Carlos Lepon",
         "edad": 35,
         "tecnologias": ["JavaScript", "Vue", "NodeJS"],
         "activo": true
