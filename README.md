@@ -1,8 +1,8 @@
-# Proyectos Django (Crudos en desarrollo)
+#  Django (project - Crudos en desarrollo)
 
 ##  Descripción
 
-Proyecto (ejemplo) desarrollado con Django, un framework de alto nivel para Python que permite construir aplicaciones web de manera rápida y segura.
+**Proyecto (ejemplo) desarrollado con Django.**
 
 **En Desarrollo...**
 
