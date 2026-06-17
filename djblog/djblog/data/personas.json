@@ -1,0 +1,26 @@
+[
+    {
+        "nombre": "Pepe Lepon",
+        "edad": 30,
+        "tecnologias": ["Python", "Django", "NextJS", "React"],
+        "activo": true
+    },
+    {
+        "nombre": "Maria Gomez",
+        "edad": 25,
+        "tecnologias": ["Java", "Spring Boot", "Angular"],
+        "activo": true
+    },
+    {
+        "nombre": "Carlos Lopez",
+        "edad": 35,
+        "tecnologias": ["JavaScript", "Vue", "NodeJS"],
+        "activo": true
+    },
+    {
+        "nombre": "Lupita Lepon",
+        "edad": 30,
+        "tecnologias": ["TypeScript", "Angular", "NodeJS"],
+        "activo": true
+    }
+]
