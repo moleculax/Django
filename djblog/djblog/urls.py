@@ -40,9 +40,11 @@ urlpatterns = [
     # AGREGO LAS RUTAS DE LOS VIEWSETS
     path('api/', include(router_post.urls)),
 
-    # Swagger UI
+    # Swagger UI Documentacion
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    # PERSONALICE  A docs/
+    path('docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
 
     # RUTA PARA RESULTADOS
     path('posts/resultados/', views.resultados_posts, name='resultados_posts'),
