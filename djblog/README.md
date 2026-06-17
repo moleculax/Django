@@ -219,7 +219,7 @@ Configuración Apache:   /etc/apache2/sites-available/djblog.conf
 ```
 Fecha de creación:      16 de Junio de 2026
 Versión:                1.0
-Framework:              Django 4.2+
+Framework:              Django 6.0.6
 Servidor:               Apache2 + mod_wsgi
 Base de datos:          PostgreSQL
-Sistema operativo:      Debian/Ubuntu
+Sistema operativo:      Debian
