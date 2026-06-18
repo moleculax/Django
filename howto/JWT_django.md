@@ -92,7 +92,8 @@ headers = {
 response = requests.get('http://localhost:8000/api/protegida/', headers=headers)
 ```
 
-Nota: Se actualiza constantemente
+## ::. Nota .::
+**Este archivo se actualiza constantemente**
 ```
 .
 .
