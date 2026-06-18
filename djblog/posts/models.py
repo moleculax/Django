@@ -9,6 +9,7 @@ class Post(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
+
 # PARA EJECUTAR EL MODELO Y SE TRANFORME EN SQL PRA CREAR LA TABLA POST
 # PARA LO CUAL CREAMOS LA MIGRACION
 # python3 manage.py makemigrations

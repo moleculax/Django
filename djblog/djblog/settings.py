@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'rest_framework',
     'drf_spectacular',
+    'user',
     "posts",
     'home',
     'nosotros',
@@ -184,3 +185,6 @@ REST_FRAMEWORK = {
 # Media files (uploads)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# AGREGO PARA OVERRRIDE DE USUARIOS
+AUTH_USER_MODEL = 'user.User'
