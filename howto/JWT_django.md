@@ -93,6 +93,9 @@ response = requests.get('http://localhost:8000/api/protegida/', headers=headers)
 ```
 
 ## ::. Nota .::
+**Consulte para mas informacion:**
+[https://django-rest-framework-simplejwt.readthedocs.io/en/latest/](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/)
+
 **Este archivo se actualiza constantemente**
 ```
 .
