@@ -64,7 +64,7 @@ ROOT_URLCONF = "djblog.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        'DIRS': [BASE_DIR / "templates"],   #  aquí Django busca templates globales
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [

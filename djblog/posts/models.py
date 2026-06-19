@@ -15,8 +15,8 @@ class Post(models.Model):
         Category,
         on_delete=models.CASCADE,
         related_name="posts",
-        null=True,      # ✅ permite que los posts existentes queden sin categoría
-        blank=True      # ✅ permite que el campo quede vacío en formularios
+        null=True,      #  permite que los posts existentes queden sin categoría
+        blank=True      #  permite que el campo quede vacío en formularios
     )
 
     def __str__(self):
