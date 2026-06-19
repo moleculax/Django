@@ -34,6 +34,9 @@ import posts.views as views
 
 import user
 
+
+
+
 urlpatterns = [
     path("admin/", admin.site.urls),
    # / path("posts/", HelloWorld.as_view()),
@@ -57,6 +60,9 @@ urlpatterns = [
 
     path('api/', include('user.api.router')),
 
+    path('categories/', include('apps.categories.urls')),
+
+    path('comments/', include('apps.comments.urls')),
 
 
 ]
