@@ -10,4 +10,3 @@
 | ![PyCharm](https://img.shields.io/badge/PyCharm-000000?style=for-the-badge&logo=pycharm&logoColor=white) | Entorno de desarrollo integrado (IDE) para Python. |
 ---
 
-Usa postgres 
