@@ -7,6 +7,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 class User(AbstractUser):
     # pass
+
     # AGREGAMOS OTROS CAMPOS A USER_USER
     # DESPUES DE AGREGARLOS TENEMOS QUE EJECUTAR makemigrations y migrate
     phone_number = models.CharField(max_length=20, blank=True, null=True)
@@ -19,5 +20,10 @@ class User(AbstractUser):
     # CAMBIAMOS PARA LOGUEARNOS CON EL EMAIL Y NO CON EL NOMBRE DE USUARIO
     # HACEMOS EL EMAIL UNICO
     email = models.EmailField(unique=True, max_length=255, blank=True, null=True)
-    USERNAME_FIELD = 'email'
+
+    USERNAME_FIELD = 'username'  # Para que pida username al crear usuario
+    # REQUIRED_FIELDS = ['email']  # Email es obligatorio también
+
+
+    # USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []

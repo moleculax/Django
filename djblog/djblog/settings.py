@@ -9,8 +9,9 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+from datetime import datetime, timedelta
 from pathlib import Path
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,13 +79,13 @@ WSGI_APPLICATION = "djblog.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
+#
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 # DATABASES = {
 #     # Base de datos SQLite actual (Principal)
@@ -105,16 +106,16 @@ DATABASES = {
 
 
 # ejecutar: python manage.py migrate --database=postgres_db
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'nombre_de_tu_base_de_datos',
-#         'USER': 'tu_usuario_postgres',
-#         'PASSWORD': 'tu_contraseña',
-#         'HOST': 'localhost',      # O la IP de tu servidor de Postgres
-#         'PORT': '5432',           # Puerto por defecto de PostgreSQL
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'djblog',
+        'USER': 'admin',
+        'PASSWORD': 'admin123',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 
 
@@ -178,6 +179,9 @@ SPECTACULAR_SETTINGS = {
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
 
@@ -188,3 +192,20 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # AGREGO PARA OVERRRIDE DE USUARIOS
 AUTH_USER_MODEL = 'user.User'
+
+# AGREGO TIEMPO DE CADUCIDAD DEL TOKEN
+
+# Configuración recomendada para producción
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=4),
+    'REFRESH_TOKEN_LIFETIME': timedelta(hours=12),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+}
+
+# SIMPLE_JWT = {
+#     'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),    # Dura 2 horas
+#     'REFRESH_TOKEN_LIFETIME': timedelta(hours=12),  # Cubre la jornada completa de 10h + margen
+#     'ROTATE_REFRESH_TOKENS': True,                  # Cambia el token de refresco en cada uso
+#     'BLACKLIST_AFTER_ROTATION': True,               # Invalida los tokens viejos por seguridad
+# }

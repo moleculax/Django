@@ -18,6 +18,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+
 # from posts.views import HelloWorld
 from home.views import HomeView
 from nosotros.views import nosotros
@@ -31,6 +32,8 @@ from django.conf.urls.static import static
 
 import posts.views as views
 
+import user
+
 urlpatterns = [
     path("admin/", admin.site.urls),
    # / path("posts/", HelloWorld.as_view()),
@@ -40,6 +43,7 @@ urlpatterns = [
     # AGREGO LAS RUTAS DE LOS VIEWSETS
     path('api/', include(router_post.urls)),
 
+
     # Swagger UI Documentacion
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
@@ -48,6 +52,12 @@ urlpatterns = [
 
     # RUTA PARA RESULTADOS
     path('posts/resultados/', views.resultados_posts, name='resultados_posts'),
+
+    # RUTA CREADA PARA JWT
+
+    path('api/', include('user.api.router')),
+
+
 
 ]
 
