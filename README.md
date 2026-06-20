@@ -92,6 +92,13 @@ pip install markdown       # Markdown support for the browsable API.
 pip install django-filter  # Filtering support
 ```
 
+
+
+- [API-REST](https://github.com/moleculax/Django/blob/main/howto/API_REST.MD) 
+- [Decoradores](https://github.com/moleculax/Django/blob/main/howto/decoradores_django.md) 
+- [JWT](https://github.com/moleculax/Django/blob/main/howto/JWT_django.md)
+- [Overrride](https://github.com/moleculax/Django/blob/main/howto/override_de_usuarios.md)
+
 Django Rest [www.django-rest-framework.org](https://www.django-rest-framework.org/) 
 
 Web: [Moleculax App](https://moleculaxapp.vercel.app/)
