@@ -78,19 +78,46 @@ python manage.py test
 
 ---
 
-## 📁 Estructura Principal del Proyecto
+## 📁 Estructura Clasica de Django
 
 ```text
-├── core/                  # Configuración principal de Django (settings, urls, wsgi)
-├── apps/                  # Directorio para las aplicaciones del proyecto
-│   ├── authentication/    # Gestión de usuarios y perfiles
-│   ├── products/          # Gestión del catálogo de productos
-│   └── orders/            # Gestión de carritos y pedidos
-├── static/                # Archivos estáticos (CSS, JS, Imágenes)
-├── templates/             # Plantillas HTML (si aplica)
-├── .env.example           # Plantilla de variables de entorno
-├── manage.py              # Script de gestión de Django
-└── requirements.txt       # Dependencias del proyecto
+mi_proyecto_django/
+│
+├── mi_proyecto/                 # Configuración central del proyecto
+│   ├── __init__.py
+│   ├── asgi.py                  # Entrada para servidores ASGI
+│   ├── settings.py              # Configuración global (BD, apps, middleware)
+│   ├── urls.py                  # Rutas principales
+│   └── wsgi.py                  # Entrada para servidores WSGI
+│
+├── apps/                        # Aplicaciones internas modulares
+│   ├── usuarios/                # Ejemplo de app
+│   │   ├── __init__.py
+│   │   ├── admin.py             # Configuración del admin
+│   │   ├── apps.py              # Configuración de la app
+│   │   ├── models.py            # Modelos de datos
+│   │   ├── views.py             # Lógica de vistas
+│   │   ├── urls.py              # Rutas específicas
+│   │   └── tests.py             # Pruebas unitarias
+│   └── blog/                    # Otra app de ejemplo
+│
+├── templates/                   # Plantillas HTML
+│   ├── base.html
+│   ├── usuarios/
+│   └── blog/
+│
+├── static/                      # Archivos estáticos globales
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── media/                       # Archivos subidos por usuarios
+│
+├── requirements.txt             # Dependencias del proyecto
+├── manage.py                    # Utilidad de línea de comandos
+└── README.md                    # Documentación del proyecto
+
+
 ```
 
 ---
