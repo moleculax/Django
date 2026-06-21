@@ -68,17 +68,46 @@ pip install -r requirements.txt
 django-admin startproject nombre_proyecto .
 ```
 
-**Estructura del proyecto creado**
+**Estructura típica**
 
 ```
-nombre_proyecto/
-├── manage.py
-└── nombre_proyecto/
-    ├── __init__.py
-    ├── settings.py
-    ├── urls.py
-    ├── asgi.py
-    └── wsgi.py
+mi_proyecto_django/
+│
+├── mi_proyecto/                 # Configuración central del proyecto
+│   ├── __init__.py
+│   ├── asgi.py                  # Entrada para servidores ASGI
+│   ├── settings.py              # Configuración global (BD, apps, middleware)
+│   ├── urls.py                  # Rutas principales
+│   └── wsgi.py                  # Entrada para servidores WSGI
+│
+├── apps/                        # Aplicaciones internas modulares
+│   ├── usuarios/                # Ejemplo de app
+│   │   ├── __init__.py
+│   │   ├── admin.py             # Configuración del admin
+│   │   ├── apps.py              # Configuración de la app
+│   │   ├── models.py            # Modelos de datos
+│   │   ├── views.py             # Lógica de vistas
+│   │   ├── urls.py              # Rutas específicas
+│   │   └── tests.py             # Pruebas unitarias
+│   └── blog/                    # Otra app de ejemplo
+│
+├── templates/                   # Plantillas HTML
+│   ├── base.html
+│   ├── usuarios/
+│   └── blog/
+│
+├── static/                      # Archivos estáticos globales
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
+├── media/                       # Archivos subidos por usuarios
+│
+├── requirements.txt             # Dependencias del proyecto
+├── manage.py                    # Utilidad de línea de comandos
+└── README.md                    # Documentación del proyecto
+
+
     
 ```
 
