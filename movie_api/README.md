@@ -1,8 +1,7 @@
 # movie_api
 
 ## 
-Este repositorio tiene  movies_api, donde estan los archivos del proyecto de Django REST.
-Los archivos de configuración y las aplicaciones. Encontraras el archivo **requirements.txt** con las dependencias requeridas por este.
+Encontraras el archivo **requirements.txt** con las dependencias requeridas por este.
 
 ## Instalación
 
@@ -48,14 +47,14 @@ Estructura
 │   ├── migrations
 │   │   ├── __init__.py
 │   │   └── __pycache__
-│   │       └── __init__.cpython-313.pyc
+│   │       └── __init__.cpython-313.py
 │   ├── models.py
 │   ├── __pycache__
-│   │   ├── admin.cpython-313.pyc
-│   │   ├── apps.cpython-313.pyc
-│   │   ├── __init__.cpython-313.pyc
-│   │   ├── models.cpython-313.pyc
-│   │   └── urls.cpython-313.pyc
+│   │   ├── admin.cpython-313.py
+│   │   ├── apps.cpython-313.py
+│   │   ├── __init__.cpython-313.py
+│   │   ├── models.cpython-313.py
+│   │   └── urls.cpython-313.py
 │   ├── tests.py
 │   ├── urls.py
 │   └── views.py
@@ -63,10 +62,10 @@ Estructura
 │   ├── asgi.py
 │   ├── __init__.py
 │   ├── __pycache__
-│   │   ├── __init__.cpython-313.pyc
-│   │   ├── settings.cpython-313.pyc
-│   │   ├── urls.cpython-313.pyc
-│   │   └── wsgi.cpython-313.pyc
+│   │   ├── __init__.cpython-313.py
+│   │   ├── settings.cpython-313.py
+│   │   ├── urls.cpython-313.py
+│   │   └── wsgi.cpython-313.py
 │   ├── settings.py
 │   ├── urls.py
 │   └── wsgi.py
