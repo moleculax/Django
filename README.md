@@ -57,6 +57,10 @@ Exportar dependencias:
 
 pip freeze > requirements.txt
 
+
+Instalar todas las dependencias del proyecto al clonarlo o copiarlo en otro entorno virtual
+pip install -r requirements.txt
+
 ```
 **Crear proyecto en directorio actual**
 
