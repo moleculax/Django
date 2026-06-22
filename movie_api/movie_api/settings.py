@@ -45,10 +45,17 @@ INSTALLED_APPS = [
 
 # AGREGAMOS PARA JWT LUEGO DE INSTALAR
 # https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#installation
+
+# 'rest_framework_simplejwt.authentication.JWTAuthentication',
+# 'rest_framework.authentication.SessionAuthentication',
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
 }
 
 

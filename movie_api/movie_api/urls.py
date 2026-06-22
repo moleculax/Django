@@ -37,5 +37,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("movie/", include("movie.urls")),
     path("swagger/", scheme_view.with_ui("swagger", cache_timeout=0)),
+    path("docs/", scheme_view.with_ui("swagger", cache_timeout=0)),
     path("user/", include("user.urls")),
 ]
