@@ -58,7 +58,7 @@ class EjemploSerializer(serializers.Serializer):
 ##  Conclusión
 La **serialización en Django** (especialmente con Django REST Framework) es esencial para construir APIs, ya que permite **comunicar datos entre el backend y el frontend** de forma segura, validada y estructurada.
 
-# ⚖️ Ventajas y Desventajas de la Serialización en Django
+# Ventajas y Desventajas de la Serialización en Django
 
 ## ✅ Ventajas
 - **[Abstracción](ca://s?q=Ventajas_de_la_serializacion_en_Django)**: Permite trabajar con objetos Python sin preocuparse por el formato de transmisión.  
