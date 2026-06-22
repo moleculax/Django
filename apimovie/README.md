@@ -1,4 +1,4 @@
-# movie_api
+# apiMovie
 
 ## 
 Encontraras el archivo **requirements.txt** con las dependencias requeridas por este.
