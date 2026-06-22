@@ -38,16 +38,12 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "drf_yasg",
+    "rest_framework_simplejwt",
+    "drf_spectacular",  # ← USAR drf-spectacular
     "movie",
     "user"
 ]
 
-# AGREGAMOS PARA JWT LUEGO DE INSTALAR
-# https://django-rest-framework-simplejwt.readthedocs.io/en/latest/getting_started.html#installation
-
-# 'rest_framework_simplejwt.authentication.JWTAuthentication',
-# 'rest_framework.authentication.SessionAuthentication',
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -56,8 +52,18 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     ),
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Movie API',
+    'DESCRIPTION': 'API para gestión de películas con autenticación JWT',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'SWAGGER_UI_SETTINGS': {
+        'persistAuthorization': True,
+    },
+}
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
