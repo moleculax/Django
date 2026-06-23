@@ -4,7 +4,7 @@
 ![Django REST Framework](https://img.shields.io/badge/DRF-ff1709?style=for-the-badge&logo=django&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 
-API RESTful (Ejemplo)para la gestión de películas con autenticación JWT. Permite crear, leer, actualizar y eliminar películas.
+API RESTful (Ejemplo) para la gestión de películas con autenticación JWT. Permite crear, leer, actualizar y eliminar películas.
 
 ---
 
