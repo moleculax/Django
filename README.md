@@ -31,7 +31,7 @@ Este repositorio contiene proyectos de ejemplo desarrollados con Django, diseña
 |----------|-------------|--------|
 | **apiMovie** | API RESTful para la gestión de películas con autenticación JWT. | [Ver código](https://github.com/moleculax/Django/tree/main/apimovie) |
 | **djBlog** | Blog desarrollado con Django, con panel de administración y sistema de publicaciones. | [Ver código](https://github.com/moleculax/Django/tree/main/djblog) |
-| **JWT Login** |  | [Ver código](https://github.com/moleculax/Django/tree/main/jwtlogin) | 
+| **JWT Login** |  Sistema de autenticación con JWT (JSON Web Tokens). Incluye un dashboard con visualización de tokens| [Ver código](https://github.com/moleculax/Django/tree/main/jwtlogin) | 
 
 ---
 
