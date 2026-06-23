@@ -9,13 +9,15 @@ from django.http import JsonResponse
 from . import serializers
 # COLOCO UN (.) DELANTE PORQUE ESTOY EN LA MISMA CARPETA
 from .serializers import MovieSerializer
+from drf_spectacular.utils import extend_schema, OpenApiResponse
 
 
 class VistaMovie(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [AllowAny]
 
     def get(self, request, format=None):
         content = {
+            'estado': True,
             'message': 'La solicitud fue permitida',
         }
         return Response(content)
@@ -37,13 +39,24 @@ class MovieList(APIView):
         # return JsonResponse(data, safe=False)
         # COMENTE LO DE ARRIBA PORQUE USARE SERIALIZER
         data_serializado = MovieSerializer(movie, many=True)
-        return Response(
-            {
-                "estado": True,
-                "data": data_serializado.data
-            },
-            status=status.HTTP_200_OK
-        )
+        if movie.exists():
+
+            return Response(
+                {
+                    "estado": True,
+                    "mensaje": "Datos encontrados",
+                    "data": data_serializado.data
+                },
+                status=status.HTTP_200_OK
+            )
+        else:
+            return  Response(
+                {
+                    "estado": False,
+                    "mensaje": "No existen datos",
+                    "data": data_serializado.data
+                }
+            )
 
 # TRAIGO LAS PELICULAS POR ID
 
@@ -62,27 +75,40 @@ class MovieBYID(APIView):
             # return JsonResponse(data, safe=False)
 
             data_serializado = MovieSerializer(movie)
-            # return JsonResponse(data_serializado.data, status=status.HTTP_200_OK)
             return Response(
                 {
                     "estado": True,
+                    "mensaje": "Datos encontrados",
                     "data": data_serializado.data
-                 },
+                },
                 status=status.HTTP_200_OK
             )
 
         except Movie.DoesNotExist:
-            # return JsonResponse(  # ← CAMBIAR A JsonResponse
+            # return JsonResponse(
             #     {"error": "Película no encontrada"},
             #     status=status.HTTP_404_NOT_FOUND
             # )
-            return Response(  # ← CAMBIAR A JsonResponse
-                {"error": "Película no encontrada"},
+            return Response(
+                {
+                    "estado": False,
+                    "mensaje": "Película no encontrada",
+                    "data": None
+                },
                 status=status.HTTP_404_NOT_FOUND
             )
 
 class MovieCreate(APIView):
     permission_classes = [IsAuthenticated] # TIENE QUE ESTAR AUTENTICADO
+
+    @extend_schema(
+        request=MovieSerializer,  # MUESTRA LOS CAMPOS EN SWAGGER
+        responses={
+            200: OpenApiResponse(description='Actualizada correctamente'),
+            400: OpenApiResponse(description='Datos inválidos'),
+            404: OpenApiResponse(description='No encontrada'),
+        }
+    )
 
     def post(self, request):
         serializer = MovieSerializer(data=request.data)
@@ -93,8 +119,16 @@ class MovieCreate(APIView):
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class MovieUpdate(APIView):
-    permission_classes = [IsAuthenticated] # TIENE QUE ESTAR AUTENTICADO
+    permission_classes = [IsAuthenticated]  # TIENE QUE ESTAR AUTENTICADO
 
+    @extend_schema(
+        request=MovieSerializer,  #  MUESTRA LOS CAMPOS EN SWAGGER
+        responses={
+            200: OpenApiResponse(description='Actualizada correctamente'),
+            400: OpenApiResponse(description='Datos inválidos'),
+            404: OpenApiResponse(description='No encontrada'),
+        }
+    )
     def put(self, request, pk):
         try:
             movie = Movie.objects.get(pk=pk)

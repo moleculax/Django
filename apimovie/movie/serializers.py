@@ -7,6 +7,7 @@ from .models import Movie
 #     sinopsis = serializers.CharField(
 #         style={'base_template': 'textarea.html'}  # se renderiza como textarea en la API navegable
 #     )
+#     link = serializers.CharField(max_length=200)
 
 
 # CON MODEL ES MUCHO MAS SENCILLO
