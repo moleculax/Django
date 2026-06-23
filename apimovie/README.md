@@ -3,6 +3,10 @@ API RESTful para la gestión de películas con autenticación JWT. Permite crear
 ## 
 Encontraras el archivo **requirements.txt** con las dependencias requeridas por este.
 
+![Home Page de la API](https://github.com/moleculax/Django/blob/main/apimovie/capturasP/home.png?raw=true)
+
+![Documentación Swagger de la API](https://github.com/moleculax/Django/blob/main/apimovie/capturasP/docs.png?raw=true)
+
 
 # Estructura
 
