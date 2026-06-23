@@ -3,9 +3,9 @@ from movie.models import Movie
 
 class MovieAdmin(admin.ModelAdmin):
     # HORIZONTALES
-    list_display = ('title', 'duration', )
+    list_display = ('title', 'duration','link', 'release_date',)
     # LATERALES
-    list_filter = ('release_date','sinopsis',)
+    list_filter = ('sinopsis',)
 
     # CAMPOS DE BÚSQUEDA
     search_fields = ('title', 'sinopsis')
