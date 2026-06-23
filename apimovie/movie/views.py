@@ -283,3 +283,6 @@ class MovieDelete(APIView):
                 {"error": "Película no encontrada"},
                 status=status.HTTP_404_NOT_FOUND
             )
+
+
+

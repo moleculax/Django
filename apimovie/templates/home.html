@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie API</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            max-width: 800px;
+            width: 100%;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .logo {
+            font-size: 4em;
+            margin-bottom: 10px;
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: #666;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+        .version {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .info-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        .info-card .icon {
+            font-size: 2em;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .info-card .label {
+            font-weight: bold;
+            color: #333;
+        }
+        .info-card .value {
+            color: #666;
+            font-size: 0.9em;
+        }
+        .description {
+            color: #555;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #5a67d8;
+        }
+        .btn-outline {
+            background: transparent;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+        .btn-outline:hover {
+            background: #667eea;
+            color: white;
+        }
+        .footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #999;
+            font-size: 0.85em;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            h1 { font-size: 1.8em; }
+            .info-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🎬</div>
+        <h1>Movie API</h1>
+        <p class="subtitle">API de gestión de películas</p>
+        <span class="version">Versión 1.0.0</span>
+
+        <p class="description">
+            API RESTful para la gestión de películas con autenticación JWT.
+            Permite crear, leer, actualizar y eliminar películas.
+        </p>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <span class="icon">📦</span>
+                <div class="label">Películas</div>
+                <div class="value">Gestión completa</div>
+            </div>
+            <div class="info-card">
+                <span class="icon">🔑</span>
+                <div class="label">Autenticación</div>
+                <div class="value">JWT Seguro</div>
+            </div>
+            <div class="info-card">
+                <span class="icon">📖</span>
+                <div class="label">Documentación</div>
+                <div class="value">Swagger UI</div>
+            </div>
+            <div class="info-card">
+                <span class="icon">🚀</span>
+                <div class="label">Estado</div>
+                <div class="value">Activo</div>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="/swagger/" class="btn">📖 Documentación</a>
+            <a href="/admin/" class="btn btn-outline">⚙️ Admin</a>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 Movie API - Todos los derechos reservados
+        </div>
+    </div>
+</body>
+</html>
