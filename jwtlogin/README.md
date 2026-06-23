@@ -51,3 +51,12 @@ Sistema de autenticación con **JWT (JSON Web Tokens)** desarrollado en Django. 
 ```bash
 git clone https://github.com/moleculax/Django.git
 cd Django/jwtlogin
+
+```
+**Puede verlo en produccion en:**
+
+[https://moleculax.pythonanywhere.com/](https://moleculax.pythonanywhere.com/)
+
+- usuario: admin
+- password: admin123
+

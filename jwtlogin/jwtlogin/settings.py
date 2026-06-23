@@ -25,9 +25,12 @@ SECRET_KEY = "django-insecure-+p-0&@vg7&-27qd&m^3kn_zsr^exg8ol@k1&%s__%e=jq8g&d6
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
 ALLOWED_HOSTS = []
 
+# PARA PUBLICAR EN pythonanywhere.com
+# DEBUG = False # CAMBIAR A True para desarrollo
+# Dominio de PythonAnywhere
+# ALLOWED_HOSTS = ['moleculax.pythonanywhere.com', 'www.moleculax.pythonanywhere.com']
 
 # Application definition
 
@@ -135,7 +138,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # ← AGREGAR
 
+# Media files (si tienes imágenes subidas)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # CONFIGURACIÓN DE JWT (TOKEN DURA 8 HORAS)  # ← AGREGADO
 SIMPLE_JWT = {
