@@ -35,7 +35,7 @@ class LoginView(APIView):
         if user is not None:
             refresh = RefreshToken.for_user(user)
             return Response({
-                'access': str(refresh.access_token),
+                'token': str(refresh.access_token),
                 'refresh': str(refresh),
                 'message': 'Login exitoso'
             }, status=status.HTTP_200_OK)
