@@ -1,11 +1,14 @@
 #  Django (project - Crudos en desarrollo)
 
 
+## 🛠️ Tecnologías utilizadas
+
 | Tecnología | Descripción |
 |------------|-------------|
 | ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) | Lenguaje de programación principal de alto nivel. |
 | ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white) | Entorno de desarrollo web enfocado en la velocidad y la seguridad. |
 | ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white) | Sistema de base de datos relacional avanzado y de código abierto. |
+| ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white) | Base de datos ligera y sin configuración, ideal para desarrollo. |
 | ![Debian](https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white) | Sistema operativo servidor para un entorno de despliegue estable. |
 | ![PyCharm](https://img.shields.io/badge/PyCharm-000000?style=for-the-badge&logo=pycharm&logoColor=white) | Entorno de desarrollo integrado (IDE) para Python. |
 
@@ -17,121 +20,3 @@
 
 **En Desarrollo...**
 
-# Django -  Esencial
-
-
-
-### Crear entorno virtual
-
-```bash
-# Linux / macOS
-python3 -m venv env
-
-```
-Activar entorno virtual
-
-```
-source env/bin/activate
-
-# Debería mostrar (env) al inicio de la línea de comandos
-pip list
-
-Eliminar entorno virtual
-
-# Linux 
-rm -rf env
-```
-**Instalar Django**
-```
-pip install django
-
-Instalacion especifica:
-
-pip install django==5.1
-
-Actualizarlo:
-
-pip install --upgrade django
-
-Exportar dependencias:
-
-pip freeze > requirements.txt
-
-
-Instalar todas las dependencias del proyecto al clonarlo o copiarlo en otro entorno virtual
-pip install -r requirements.txt
-
-```
-**Crear proyecto en directorio actual**
-
-```
-django-admin startproject nombre_proyecto .
-```
-
-**Estructura típica**
-
-```
-mi_proyecto_django/
-│
-├── mi_proyecto/                 # Configuración central del proyecto
-│   ├── __init__.py
-│   ├── asgi.py                  # Entrada para servidores ASGI
-│   ├── settings.py              # Configuración global (BD, apps, middleware)
-│   ├── urls.py                  # Rutas principales
-│   └── wsgi.py                  # Entrada para servidores WSGI
-│
-├── apps/                        # Aplicaciones internas modulares
-│   ├── usuarios/                # Ejemplo de app
-│   │   ├── __init__.py
-│   │   ├── admin.py             # Configuración del admin
-│   │   ├── apps.py              # Configuración de la app
-│   │   ├── models.py            # Modelos de datos
-│   │   ├── views.py             # Lógica de vistas
-│   │   ├── urls.py              # Rutas específicas
-│   │   └── tests.py             # Pruebas unitarias
-│   └── blog/                    # Otra app de ejemplo
-│
-├── templates/                   # Plantillas HTML
-│   ├── base.html
-│   ├── usuarios/
-│   └── blog/
-│
-├── static/                      # Archivos estáticos globales
-│   ├── css/
-│   ├── js/
-│   └── images/
-│
-├── media/                       # Archivos subidos por usuarios
-│
-├── requirements.txt             # Dependencias del proyecto
-├── manage.py                    # Utilidad de línea de comandos
-└── README.md                    # Documentación del proyecto
-
-
-    
-```
-
-**PARA EJECUTAR EL MODELO Y  CREAR LA TABLAS**
-```
- python3 manage.py makemigrations
- python3 manage.py migrate  
- ```  
- 
- 
-**PARA REST FRAMEWORK**
-```
-pip install djangorestframework
-pip install markdown       # Markdown support for the browsable API.
-pip install django-filter  # Filtering support
-```
-
-
-
-- [API-REST](https://github.com/moleculax/Django/blob/main/howto/API_REST.MD) 
-- [Decoradores](https://github.com/moleculax/Django/blob/main/howto/decoradores_django.md) 
-- [JWT](https://github.com/moleculax/Django/blob/main/howto/JWT_django.md)
-- [Overrride](https://github.com/moleculax/Django/blob/main/howto/override_de_usuarios.md)
-
-Django Rest [www.django-rest-framework.org](https://www.django-rest-framework.org/) 
-
-Web: [Moleculax App](https://moleculaxapp.vercel.app/)
