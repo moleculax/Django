@@ -10,3 +10,6 @@
 | ![PyCharm](https://img.shields.io/badge/PyCharm-000000?style=for-the-badge&logo=pycharm&logoColor=white) | Entorno de desarrollo integrado (IDE) para Python. |
 
 
+![Home Page del Blog](https://github.com/moleculax/Django/blob/main/capturasP/homedjblog.png?raw=true)
+
+![Swagger del Blog](https://github.com/moleculax/Django/blob/main/capturasP/sdjblog.png?raw=true)
