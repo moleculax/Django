@@ -18,5 +18,8 @@
 
 **Proyecto (ejemplo) desarrollado con Django.**
 
-**En Desarrollo...**
+**Codigo Fuente de:**
+
+- [apiMovie](https://github.com/moleculax/Django/tree/main/apimovie)
+- [djBlog](https://github.com/moleculax/Django/tree/main/djblog)
 
