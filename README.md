@@ -1,5 +1,12 @@
-#  Django (project - Crudos en desarrollo)
+# 🐍 Django Projects - CRUD en Desarrollo
 
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Status](https://img.shields.io/badge/Status-En%20Desarrollo-yellow?style=for-the-badge)
+
+Repositorio con proyectos prácticos desarrollados en Django, enfocados en la creación de sistemas CRUD (Crear, Leer, Actualizar, Eliminar). Ideal para aprender y experimentar con el framework.
+
+---
 
 ## 🛠️ Tecnologías utilizadas
 
@@ -14,12 +21,26 @@
 
 ---
 
-##  Descripción
+## 📖 Descripción
 
-**Proyecto (ejemplo) desarrollado con Django.**
+Este repositorio contiene proyectos de ejemplo desarrollados con Django, diseñados para demostrar la implementación de operaciones CRUD en aplicaciones web. Los proyectos están en constante evolución y sirven como base para aprender buenas prácticas y patrones de desarrollo.
 
-**Codigo Fuente de:**
+### Proyectos incluidos:
 
-- [apiMovie](https://github.com/moleculax/Django/tree/main/apimovie)
-- [djBlog](https://github.com/moleculax/Django/tree/main/djblog)
+| Proyecto | Descripción | Enlace |
+|----------|-------------|--------|
+| **apiMovie** | API RESTful para la gestión de películas con autenticación JWT. | [Ver código](https://github.com/moleculax/Django/tree/main/apimovie) |
+| **djBlog** | Blog desarrollado con Django, con panel de administración y sistema de publicaciones. | [Ver código](https://github.com/moleculax/Django/tree/main/djblog) |
+
+---
+
+## 🚀 Cómo empezar
+
+1. Clona el repositorio:
+ ```bash
+   git clone https://github.com/moleculax/Django.git
+```
+
+
+[EjGomez](https://moleculaxapp.vercel.app/)
 
