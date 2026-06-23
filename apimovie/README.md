@@ -1,7 +1,60 @@
-# apiMovie
-API RESTful para la gestión de películas con autenticación JWT. Permite crear, leer, actualizar y eliminar películas. 
-## 
-Encontraras el archivo **requirements.txt** con las dependencias requeridas por este.
+# 🎬 apiMovie
+
+![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+![Django REST Framework](https://img.shields.io/badge/DRF-ff1709?style=for-the-badge&logo=django&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
+
+API RESTful (Ejemplo)para la gestión de películas con autenticación JWT. Permite crear, leer, actualizar y eliminar películas.
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- **Django** - Framework web de alto nivel.
+- **Django REST Framework** - Para construir la API.
+- **JWT (JSON Web Tokens)** - Para autenticación segura.
+- **SQLite** - Base de datos por defecto (puedes cambiarla).
+
+---
+
+## 📦 Instalación
+
+1. Clona el repositorio:
+```bash
+git clone https://github.com/moleculax/Django.git
+cd Django/apimovie
+```
+
+2. Crea un entorno virtual y actívalo:
+
+```
+python -m venv venv
+source venv/bin/activate  # En Windows: venv\Scripts\activate
+```
+
+3. Instala las dependencias:
+```
+pip install -r requirements.txt
+```
+4. Realiza las migraciones:
+```
+python3 manage.py makemigrations
+
+python3 manage.py migrate
+```
+5. Crea un superusuario:
+```
+python3 manage.py createsuperuser
+```
+6. Ejecuta el servidor:
+```
+python manage.py runserver
+```
+Para acceder al panel administrativo de Django:
+
+http://localhost:8000/admin/
+
+
 
 ![Home Page de la API](https://github.com/moleculax/Django/blob/main/apimovie/capturasP/home.png?raw=true)
 
