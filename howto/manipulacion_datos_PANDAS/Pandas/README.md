@@ -11,7 +11,7 @@ Permite trabajar con estructuras como **Series** y **DataFrame**, ideales para d
 pip install pandas
 ```
 
-
+**Este repo se actualiza con frecuencia**
 
 ----
 
