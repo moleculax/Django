@@ -4,7 +4,7 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Status](https://img.shields.io/badge/Status-En%20Desarrollo-yellow?style=for-the-badge)
 
-Repositorio con proyectos prácticos desarrollados en Django, enfocados en la creación de sistemas CRUD (Crear, Leer, Actualizar, Eliminar). Ideal para aprender y experimentar con el framework.
+
 
 ---
 
