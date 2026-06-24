@@ -1,0 +1,68 @@
+[
+    {
+        "id": 101,
+        "nombre": "Ana",
+        "apellido": "Martínez",
+        "email": "amartinez@empresa.com"
+    },
+    {
+        "id": 102,
+        "nombre": "Luis",
+        "apellido": "Pérez",
+        "email": "lperez@empresa.com"
+    },
+    {
+        "id": 103,
+        "nombre": "María",
+        "apellido": "González",
+        "email": "mgonzalez@empresa.com"
+    },
+    {
+        "id": 104,
+        "nombre": "Carlos",
+        "apellido": "Rodríguez",
+        "email": "crodriguez@empresa.com"
+    },
+    {
+        "id": 105,
+        "nombre": "Laura",
+        "apellido": "Fernández",
+        "email": "lfernandez@empresa.com"
+    },
+    {
+        "id": 106,
+        "nombre": "Javier",
+        "apellido": "Sánchez",
+        "email": "jsanchez@empresa.com"
+    },
+    {
+        "id": 107,
+        "nombre": "Carmen",
+        "apellido": "López",
+        "email": "clopez@empresa.com"
+    },
+    {
+        "id": 108,
+        "nombre": "Manuel",
+        "apellido": "Díaz",
+        "email": "mdiaz@empresa.com"
+    },
+    {
+        "id": 109,
+        "nombre": "Isabel",
+        "apellido": "Gómez",
+        "email": "igomez@empresa.com"
+    },
+    {
+        "id": 110,
+        "nombre": "Pedro",
+        "apellido": "Ruiz",
+        "email": "pruiz@empresa.com"
+    },
+    {
+        "id": 111,
+        "nombre": "Marta",
+        "apellido": "Jiménez",
+        "email": "mjimenez@empresa.com"
+    }
+]
