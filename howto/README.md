@@ -53,7 +53,7 @@ pip install django pandas
 |:---|:---|
 | 📊 **Documentación oficial de Pandas** | [https://pandas.pydata.org/docs/](https://pandas.pydata.org/docs/) |
 | 🎯 **Documentación oficial de Django** | [https://docs.djangoproject.com/](https://docs.djangoproject.com/) |
-| 📑 **Pandas Cheat Sheet (PDF)** | [https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/PDF/Pandas_Cheat_Sheet.pdf](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/PDF/Pandas_Cheat_Sheet.pdf) |
+| 📑 **Pandas Cheat Sheet (PDF)** | [Pandas_Cheat_Sheet.pdf](https://moleculaxapp.vercel.app/howto/Pandas_Cheat_Sheet.pdf) |
 
 
 
