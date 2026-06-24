@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",  # AGREGADO
     "rest_framework_simplejwt",  # AGREGADO
-    "drf_spectacular",  # ← AGREGADO
+    "drf_spectacular",  #  AGREGADO
+    "reservas", # AGREGADO
 ]
 
 MIDDLEWARE = [
