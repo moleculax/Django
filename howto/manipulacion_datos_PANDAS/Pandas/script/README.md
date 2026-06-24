@@ -34,7 +34,7 @@ Para poder ejecutar los scripts de este repositorio, necesitarás tener instalad
 | Recurso | Enlace |
 |---------|--------|
 | Documentación oficial de Pandas | [pandas.pydata.org](https://pandas.pydata.org/docs/) |
-| Cheat Sheet de Pandas | [Descargar PDF](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf) |
+| Cheat Sheet de Pandas | [Descargar PDF](https://moleculaxapp.vercel.app/howto/Pandas_Cheat_Sheet.pdf) |
 | Curso introductorio de Pandas | [Kaggle Learn](https://www.kaggle.com/learn/pandas) |
 
 ---
