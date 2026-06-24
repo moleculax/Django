@@ -1,11 +1,11 @@
-# 🔐 JWT Login - Django Authentication System
+# 🔐 JWT Login Reservas- Django Authentication System
 
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
 
-Sistema de autenticación con **JWT (JSON Web Tokens)** desarrollado en Django. Incluye un dashboard con visualización de tokens, registro de usuarios y documentación Swagger.
+Sistema de autenticación con **JWT (JSON Web Tokens)** desarrollado en Django. Incluye un dashboard con visualización de tokens, registro de usuarios, Reservas y documentación Swagger.
 
 ---
 
