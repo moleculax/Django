@@ -1,15 +1,30 @@
-# ============================================
-# ARCHIVO: reservas/urls.py
-# ============================================
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from .views import ClienteViewSet, HabitacionViewSet, ReservaViewSet
+from django.urls import path
+from . import views
 
-router = DefaultRouter()
-router.register(r'clientes', ClienteViewSet, basename='clientes')
-router.register(r'habitaciones', HabitacionViewSet, basename='habitaciones')
-router.register(r'reservas', ReservaViewSet, basename='reservas')
+app_name = 'reservas'
 
 urlpatterns = [
-    path('', include(router.urls)),
+    # Clientes
+    path('clientes/', views.ClienteViewSet.as_view({'get': 'list', 'post': 'create'}), name='cliente-list'),
+    path('clientes/<int:pk>/', views.ClienteViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
+         name='cliente-detail'),
+
+    # Habitaciones
+    path('habitaciones/', views.HabitacionViewSet.as_view({'get': 'list'}), name='habitacion-list'),
+    path('habitaciones/<int:pk>/', views.HabitacionViewSet.as_view({'get': 'retrieve'}), name='habitacion-detail'),
+    path('habitaciones/disponibles/', views.HabitacionViewSet.as_view({'get': 'disponibles'}),
+         name='habitacion-disponibles'),
+    path('habitaciones/<int:pk>/ocupar/', views.HabitacionViewSet.as_view({'post': 'ocupar'}),
+         name='habitacion-ocupar'),
+    path('habitaciones/<int:pk>/liberar/', views.HabitacionViewSet.as_view({'post': 'liberar'}),
+         name='habitacion-liberar'),
+    path('habitaciones/<int:pk>/mantenimiento/', views.HabitacionViewSet.as_view({'post': 'mantenimiento'}),
+         name='habitacion-mantenimiento'),
+
+    # Reservas
+    path('reservas/', views.ReservaViewSet.as_view({'get': 'list', 'post': 'create'}), name='reserva-list'),
+    path('reservas/<int:pk>/', views.ReservaViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
+         name='reserva-detail'),
+    path('reservas/<int:pk>/cancelar/', views.ReservaViewSet.as_view({'post': 'cancelar'}), name='reserva-cancelar'),
+    path('reservas/historial/', views.ReservaViewSet.as_view({'get': 'historial'}), name='reserva-historial'),
 ]

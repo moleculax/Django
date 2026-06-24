@@ -41,4 +41,6 @@ path("dashboard/", dashboard_page, name="dashboard"),
     path('swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),  # ← AGREGADO
     path('redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),  # ← AGREGADO (OPCIONAL)
     # ======================================================================================================
+
+    path("api/reservas/", include("reservas.urls")),
 ]
