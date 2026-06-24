@@ -56,7 +56,7 @@ max     35.000000  4000.000000
 ```
 
 
-## Otro Ejemplo
+## Ejemplo
 
 ```
 #!/usr/bin/env python3
@@ -122,7 +122,45 @@ Mediana Salario:
 67300.0
 ```
 
+## Ejemplo
 
+```
+import pandas as pd
+
+# Lista de diccionarios
+salarios = [
+  {"salario": 50230.0},
+  {"salario": 55123.0},
+  {"salario": 60089.0},
+  {"salario": 75020.0},
+  {"salario": 100987.0},
+  {"salario": 202345.0},
+  {"salario": 89000.0},
+  {"salario": 61200.0},
+  {"salario": 55300.0},
+  {"salario": 73400.0},
+  {"salario": 9520.0},
+  {"salario": 870000.0}
+]
+
+# Convertir a DataFrame
+df = pd.DataFrame(salarios)
+
+# Calcular salario mayor y menor
+salario_max = df["salario"].max()
+salario_min = df["salario"].min()
+
+print("Salario mayor:", salario_max)
+print("Salario menor:", salario_min)
+
+```
+
+## Resultado
+
+```
+Salario mayor: 870000.0
+Salario menor: 9520.0
+```
 
 ## ⚙️ Uso con groupby
 Las funciones de agregación se combinan con groupby para obtener estadísticas por grupo:
