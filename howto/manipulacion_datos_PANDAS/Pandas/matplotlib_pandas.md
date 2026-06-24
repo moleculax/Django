@@ -76,3 +76,5 @@ serie_temperaturas.plot(
 
 ## Resultado
 
+![Gráfico Matplotlib](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/image/matplotlib_01.png?raw=true)
+
