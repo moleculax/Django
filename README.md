@@ -23,7 +23,7 @@ Repositorio con proyectos prácticos desarrollados en Django, enfocados en la cr
 
 ## 📖 Descripción
 
-Este repositorio contiene proyectos de ejemplo desarrollados (**codigo fuente y despligeue**) con Django, diseñados para demostrar la implementación de operaciones CRUD en aplicaciones web. Los proyectos están en constante evolución y sirven como base para aprender buenas prácticas y patrones de desarrollo.
+Este repositorio contiene proyectos de ejemplo desarrollados (*código fuente y despliegue*) con Django, diseñados para demostrar la implementación de operaciones CRUD en aplicaciones web. Los proyectos están en constante evolución y sirven como base para aprender buenas prácticas y patrones de desarrollo.
 
 ### Proyectos incluidos:
 
