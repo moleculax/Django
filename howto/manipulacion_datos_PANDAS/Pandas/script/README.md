@@ -1,5 +1,9 @@
 # 🐼 Manipulación de datos con Pandas
 
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+
 Bienvenido al repositorio de **Manipulación de datos con Pandas**. Este espacio reúne scripts elementales y prácticos diseñados para aprender y dominar el uso de **Pandas**, la librería más poderosa de Python para el análisis, limpieza y transformación de datos estructurados.
 
 Ideal tanto para quienes se inician en el mundo de los datos como para profesionales que buscan optimizar sus flujos de trabajo en análisis de negocios, ciencia de datos y aprendizaje automático.
@@ -23,9 +27,6 @@ Para poder ejecutar los scripts de este repositorio, necesitarás tener instalad
 - Lectura y escritura de archivos (CSV, Excel, JSON)
 - Agrupación y agregación de datos
 - Visualización rápida con Pandas y Matplotlib
-
----
-
 
 ---
 
@@ -55,6 +56,3 @@ Consulta el archivo [LICENSE](LICENSE) para más detalles.
 ---
 
 ¡Explora, aprende y transforma datos con Pandas! 🚀
-
-
-
