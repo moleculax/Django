@@ -15,9 +15,9 @@ pip install pandas
 
  Link |
 |:---|
- | [https://www.djangoproject.com](https://www.djangoproject.com) |
- | [https://pandas.pydata.org](https://pandas.pydata.org) |
-| [https://www.python.org](https://www.python.org) |
+ | [DataFrame en Pandas](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/file_md/DataFrame_pandas.md) |
+ | [Funciones de Agregación](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/file_md/funciones_de_agregacion_panda.md) |
+| [Visualización con Matplotlib](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/file_md/matplotlib_pandas.md) |
 
 ----
 
