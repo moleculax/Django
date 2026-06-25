@@ -13,11 +13,16 @@ pip install pandas
 
 **Este repo se actualiza con frecuencia**
 
- Link |
+ Puntos a tratar |
 |:---|
+|[¿Qué es Pandas?](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/file_md/panda_definicion.md)|
  | [DataFrame en Pandas](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/file_md/DataFrame_pandas.md) |
  | [Funciones de Agregación](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/file_md/funciones_de_agregacion_panda.md) |
 | [Visualización con Matplotlib](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/file_md/matplotlib_pandas.md) |
+|[Operadores y Métodos](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/file_md/operadores_metodos_panda.md)|
+|[Valores faltantes](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/file_md/valores_faltantes_en_panda.md)|
+|[Script Varios](https://github.com/moleculax/Django/tree/main/howto/manipulacion_datos_PANDAS/Pandas/script)|
+|[Manuales PDF](https://github.com/moleculax/Django/tree/main/howto/manipulacion_datos_PANDAS/Pandas/PDF)|
 
 ----
 
