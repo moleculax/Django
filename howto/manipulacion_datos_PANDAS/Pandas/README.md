@@ -13,7 +13,7 @@ pip install pandas
 
 **Este repo se actualiza con frecuencia**
 
- Puntos a tratar |
+ |Para leer |
 |:---|
 |[¿Qué es Pandas?](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/file_md/panda_definicion.md)|
  | [DataFrame en Pandas](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/file_md/DataFrame_pandas.md) |
