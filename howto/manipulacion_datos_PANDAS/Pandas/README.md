@@ -13,6 +13,12 @@ pip install pandas
 
 **Este repo se actualiza con frecuencia**
 
+ Link |
+|:---|
+| Django | [https://www.djangoproject.com](https://www.djangoproject.com) |
+| Pandas | [https://pandas.pydata.org](https://pandas.pydata.org) |
+| Python | [https://www.python.org](https://www.python.org) |
+
 ----
 
 MIT License
