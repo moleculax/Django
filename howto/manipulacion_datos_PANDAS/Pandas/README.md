@@ -15,9 +15,9 @@ pip install pandas
 
  Link |
 |:---|
-| Django | [https://www.djangoproject.com](https://www.djangoproject.com) |
-| Pandas | [https://pandas.pydata.org](https://pandas.pydata.org) |
-| Python | [https://www.python.org](https://www.python.org) |
+ | [https://www.djangoproject.com](https://www.djangoproject.com) |
+ | [https://pandas.pydata.org](https://pandas.pydata.org) |
+| [https://www.python.org](https://www.python.org) |
 
 ----
 
