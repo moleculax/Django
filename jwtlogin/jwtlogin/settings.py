@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "rest_framework",  # AGREGADO
     "rest_framework_simplejwt",  # AGREGADO
     "drf_spectacular",  #  AGREGADO
-    "reservas", # AGREGADO
+    "transaccionesdatos", # AGREGADO
 ]
 
 MIDDLEWARE = [

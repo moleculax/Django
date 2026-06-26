@@ -1,7 +1,7 @@
 from django.urls import path
 from . import views
 
-app_name = 'reservas'
+app_name = 'transaccionesdatos'
 
 urlpatterns = [
     # Clientes
@@ -22,9 +22,9 @@ urlpatterns = [
          name='habitacion-mantenimiento'),
 
     # Reservas
-    path('reservas/', views.ReservaViewSet.as_view({'get': 'list', 'post': 'create'}), name='reserva-list'),
-    path('reservas/<int:pk>/', views.ReservaViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
+    path('transaccionesdatos/', views.ReservaViewSet.as_view({'get': 'list', 'post': 'create'}), name='reserva-list'),
+    path('transaccionesdatos/<int:pk>/', views.ReservaViewSet.as_view({'get': 'retrieve', 'put': 'update', 'delete': 'destroy'}),
          name='reserva-detail'),
-    path('reservas/<int:pk>/cancelar/', views.ReservaViewSet.as_view({'post': 'cancelar'}), name='reserva-cancelar'),
-    path('reservas/historial/', views.ReservaViewSet.as_view({'get': 'historial'}), name='reserva-historial'),
+    path('transaccionesdatos/<int:pk>/cancelar/', views.ReservaViewSet.as_view({'post': 'cancelar'}), name='reserva-cancelar'),
+    path('transaccionesdatos/historial/', views.ReservaViewSet.as_view({'get': 'historial'}), name='reserva-historial'),
 ]

@@ -106,11 +106,11 @@ class Habitacion(models.Model):
         return not self.esta_ocupada(fecha_inicio, fecha_fin)
 
     def actualizar_estado(self):
-        """Actualiza el estado de la habitación según sus reservas activas"""
+        """Actualiza el estado de la habitación según sus transaccionesdatos activas"""
         from datetime import date
         hoy = date.today()
 
-        # Verificar si hay reservas activas (pendientes o confirmadas)
+        # Verificar si hay transaccionesdatos activas (pendientes o confirmadas)
         reservas_activas = self.reservas.filter(
             estado__in=['pendiente', 'confirmada'],
             fecha_fin__gte=hoy
@@ -171,7 +171,7 @@ class Reserva(models.Model):
     cliente = models.ForeignKey(
         Cliente,
         on_delete=models.CASCADE,
-        related_name='reservas',
+        related_name='transaccionesdatos',
         verbose_name="Cliente",
         null=True,
         blank=True
@@ -189,7 +189,7 @@ class Reserva(models.Model):
     habitacion = models.ForeignKey(
         Habitacion,
         on_delete=models.CASCADE,
-        related_name='reservas',
+        related_name='transaccionesdatos',
         verbose_name="Habitación",
         null=True,
         blank=True

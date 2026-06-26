@@ -97,7 +97,7 @@ class ReservaViewSet(viewsets.ModelViewSet):
     serializer_class = ReservaSerializer
 
     def get_queryset(self):
-        """Filtrar reservas por usuario logueado"""
+        """Filtrar transaccionesdatos por usuario logueado"""
         return Reserva.objects.filter(usuario=self.request.user)
 
     @extend_schema(
@@ -163,7 +163,7 @@ class ReservaViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['get'])
     def historial(self, request):
-        """Obtener historial de reservas del usuario logueado"""
+        """Obtener historial de transaccionesdatos del usuario logueado"""
         reservas = self.get_queryset().order_by('-created_at')
         serializer = self.get_serializer(reservas, many=True)
         return Response(serializer.data)

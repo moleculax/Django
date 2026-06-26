@@ -8,7 +8,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("reservas", "0003_alter_habitacion_tipo"),
+        ("transaccionesdatos", "0003_alter_habitacion_tipo"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
@@ -27,7 +27,7 @@ class Migration(migrations.Migration):
                 blank=True,
                 null=True,
                 on_delete=django.db.models.deletion.SET_NULL,
-                related_name="reservas",
+                related_name="transaccionesdatos",
                 to=settings.AUTH_USER_MODEL,
                 verbose_name="Usuario que reserva",
             ),
@@ -101,8 +101,8 @@ class Migration(migrations.Migration):
                 blank=True,
                 null=True,
                 on_delete=django.db.models.deletion.CASCADE,
-                related_name="reservas",
-                to="reservas.cliente",
+                related_name="transaccionesdatos",
+                to="transaccionesdatos.cliente",
                 verbose_name="Cliente",
             ),
         ),

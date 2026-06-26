@@ -1,10 +1,10 @@
 # ============================================
-# ARCHIVO: reservas/apps.py
+# ARCHIVO: transaccionesdatos/apps.py
 # ============================================
 from django.apps import AppConfig
 
 
 class ReservasConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'reservas'
+    name = 'transaccionesdatos'
     verbose_name = 'Gestión de Reservas'

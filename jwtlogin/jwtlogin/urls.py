@@ -42,5 +42,5 @@ path("dashboard/", dashboard_page, name="dashboard"),
     path('redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),  # ← AGREGADO (OPCIONAL)
     # ======================================================================================================
 
-    path("api/reservas/", include("reservas.urls")),
+    path("api/transaccionesdatos/", include("transaccionesdatos.urls")),
 ]

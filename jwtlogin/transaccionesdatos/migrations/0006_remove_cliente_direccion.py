@@ -7,7 +7,7 @@ class Migration(migrations.Migration):
 
     dependencies = [
         (
-            "reservas",
+            "transaccionesdatos",
             "0005_alter_reserva_fecha_fin_alter_reserva_fecha_inicio_and_more",
         ),
     ]

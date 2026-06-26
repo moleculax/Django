@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ("reservas", "0006_remove_cliente_direccion"),
+        ("transaccionesdatos", "0006_remove_cliente_direccion"),
     ]
 
     operations = [

@@ -122,8 +122,8 @@ class Migration(migrations.Migration):
                     "habitacion",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        related_name="reservas",
-                        to="reservas.habitacion",
+                        related_name="transaccionesdatos",
+                        to="transaccionesdatos.habitacion",
                         verbose_name="Habitación",
                     ),
                 ),
@@ -131,7 +131,7 @@ class Migration(migrations.Migration):
                     "usuario",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        related_name="reservas",
+                        related_name="transaccionesdatos",
                         to=settings.AUTH_USER_MODEL,
                         verbose_name="Usuario",
                     ),
