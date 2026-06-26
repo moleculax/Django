@@ -47,7 +47,8 @@ print("Nro de valores faltantes en cada columna:")
 print(valoresFaltantesColumnas)
 
 # Reemplazar valores faltantes en todas las columnas
-df = df.fillna("Sin asignacion")
+df = df.fillna("Sin asignar")
+
 
 print("\n ===================================== \n")
 print(df.to_string())  # to_string() para mostrar todas las columnas
