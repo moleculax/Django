@@ -15,8 +15,12 @@ df = pd.read_csv(archivo_csv)
 # CONVIERTE A JSON
 
 pasojson = "archivos_json/vienedecss.json"
+# AQUI TAMBIEN  PASO EL CSV A EXCEL ESTO ES OPCIONAL 
+pasoexcel = "archivos_excel/pasoexcel.xlsx"
 
 df.to_json(pasojson, orient='records', lines=False)
+
+df.to_excel(pasoexcel)
 
 print("CSV CONVERTIDO EN JSON")
 
