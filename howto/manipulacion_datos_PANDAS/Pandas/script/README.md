@@ -4,9 +4,9 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
-Bienvenido al repositorio de **Manipulación de datos con Pandas**. Este espacio reúne scripts elementales y prácticos diseñados para aprender y dominar el uso de **Pandas**, la librería más poderosa de Python para el análisis, limpieza y transformación de datos estructurados.
+**Manipulación de datos con Pandas**. Este espacio reúne scripts elementales y prácticos diseñados para aprender y dominar el uso de **Pandas**, la librería de Python para el análisis, limpieza y transformación de datos estructurados.
 
-Ideal tanto para quienes se inician en el mundo de los datos como para profesionales que buscan optimizar sus flujos de trabajo en análisis de negocios, ciencia de datos y aprendizaje automático.
+Ideal tanto para quienes se inician en el mundo de los datos y que buscan optimizar sus flujos de trabajo en análisis de negocios, ciencia de datos y aprendizaje automático.
 
 ---
 
@@ -36,7 +36,7 @@ Para poder ejecutar los scripts de este repositorio, necesitarás tener instalad
 |---------|--------|
 | Documentación oficial de Pandas | [pandas.pydata.org](https://pandas.pydata.org/docs/) |
 | Cheat Sheet de Pandas | [Descargar PDF](https://moleculaxapp.vercel.app/howto/Pandas_Cheat_Sheet.pdf) |
-| Curso introductorio de Pandas | [Kaggle Learn](https://www.kaggle.com/learn/pandas) |
+
 
 ---
 
@@ -55,4 +55,3 @@ Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ---
 
-¡Explora, aprende y transforma datos con Pandas! 🚀
