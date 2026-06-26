@@ -21,7 +21,7 @@ Para poder ejecutar los scripts de este repositorio, necesitarás tener instalad
 
 ---
 
-## 🚀 Contenido del repositorio
+## 🚀 Contenido del repositorio (Se actualiza con frecuencia)
 
 - Scripts básicos para manipulación de DataFrames
 - Limpieza y transformación de datos
