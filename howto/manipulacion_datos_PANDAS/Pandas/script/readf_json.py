@@ -9,5 +9,5 @@ Created on Wed Jun 24 18:00:23 2026
 import pandas as pd
 
 # Si el JSON está en un archivo
-df = pd.read_json('datos.json')
+df = pd.read_json('archivos_json/datos.json')
 print(df)
