@@ -1,5 +1,10 @@
 # 🐼 HowTo Pandas (manipulacion de datos)
 
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![Spyder IDE](https://img.shields.io/badge/Spyder-ID-FF0000?style=for-the-badge&logo=spyderide&logoColor=white)
+
 ## 📌 Introducción
 [Pandas](ca://s?q=Que_es_pandas) es una librería de Python para **análisis y manipulación de datos**.  
 Permite trabajar con estructuras como **Series** y **DataFrame**, ideales para datos tabulares y series temporales.
@@ -33,10 +38,14 @@ pip install pandas
 
 ----
 
-MIT License
 
-Copyright (c) 2026 [EjGomez](https://moleculaxapp.vercel.app/) 
-Permiso se concede por la presente, de manera gratuita, a cualquier persona que obtenga una copia de este documento y de los archivos asociados, para tratar con el documento sin restricción, incluyendo sin limitación los derechos de usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del documento, sujeto a las siguientes condiciones:
+
+## Autor
+
+**EjGomez**  
+[![GitHub](https://img.shields.io/badge/GitHub-moleculax-181717?style=flat&logo=github)](https://github.com/moleculax)
+[![Vercel](https://img.shields.io/badge/Vercel-moleculaxapp-000000?style=flat&logo=vercel)](https://moleculaxapp.vercel.app/)
+
 
 EL DOCUMENTO SE PROPORCIONA "TAL CUAL", SIN GARANTÍA DE NINGÚN TIPO.
 
