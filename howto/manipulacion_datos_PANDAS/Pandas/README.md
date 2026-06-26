@@ -1,9 +1,16 @@
-# 🐼 HowTo Pandas
+# 🐼 HowTo Pandas (manipulacion de datos)
 
 ## 📌 Introducción
 [Pandas](ca://s?q=Que_es_pandas) es una librería de Python para **análisis y manipulación de datos**.  
 Permite trabajar con estructuras como **Series** y **DataFrame**, ideales para datos tabulares y series temporales.
 
+## 📊 Gráficos generados con Pandas
+
+| Gráfico creado en pandas | Descripción |
+|:---|:---|
+| ![Gráfico de Dispersión](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/script/graficos/grafico_dispersion.png?raw=true) | **Gráfico de Dispersión** <br> Relación entre cantidad y total de ventas |
+| ![Gráfico de Ventas](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/script/graficos/grafico_ventas.png?raw=true) | **Gráfico de Ventas** <br> Evolución y distribución de ventas |
+| ![Gráfico de Barras](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/script/graficos/grafico_barras.png?raw=true) | **Gráfico de Barras** <br> Comparativa de ventas por producto |
 ---
 
 ## 🔧 Instalación
