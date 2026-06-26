@@ -9,6 +9,7 @@
 
 Ideal tanto para quienes se inician en el mundo de los datos y que buscan optimizar sus flujos de trabajo en análisis de negocios, ciencia de datos y aprendizaje automático.
 
+![Gráfico de Temperaturas](https://github.com/moleculax/Django/blob/main/howto/manipulacion_datos_PANDAS/Pandas/script/graficos/grafico_temp.png?raw=true)
 ---
 
 ## 📦 Requisitos previos
@@ -20,6 +21,9 @@ Para poder ejecutar los scripts de este repositorio, necesitarás tener instalad
 - **Editor de código** → Como VS Code, PyCharm, Jupyter Notebook, etc.
 
 ---
+
+
+
 
 ## 🚀 Contenido del repositorio (Se actualiza con frecuencia)
 
