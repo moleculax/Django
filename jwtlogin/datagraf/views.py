@@ -66,8 +66,19 @@ class GraficaSueldosEmpleados(APIView):
     def get(self, request, *args, **kwargs):
 
         template_grafica = "reportes/grafico_empleados.html"
+        # ==========================================
+        # 1. CONSTRUIR LA RUTA DEL ARCHIVO CSV
+        # ==========================================
         ruta_csv = os.path.join(settings.BASE_DIR, "data/reportes/excel/empleados.csv")
+
+        # ==========================================
+        # 2. LEER EL ARCHIVO CSV CON PANDAS
+        # ==========================================
         df = pd.read_csv(ruta_csv, sep=";")
+
+        # ==========================================
+        # 3. PROCESAR DATOS: CALCULAR PROMEDIO POR DEPARTAMENTO
+        # ==========================================
         df_resumen = df.groupby('Departamento')['Salario'].mean().round(2).sort_values(ascending=False)
 
         # ==========================================
@@ -102,23 +113,35 @@ class GraficaSueldosEmpleados(APIView):
 
         plt.tight_layout()
 
-        # Guardar gráfico
+        # ==========================================
+        # 5. GUARDAR EL GRÁFICO EN DISCO
+        # ==========================================
+        # Crear la carpeta si no existe
         graficos_dir = os.path.join(settings.BASE_DIR, "data/reportes/graficos")
         os.makedirs(graficos_dir, exist_ok=True)
 
+        # Nombre del archivo con timestamp
         from datetime import datetime
-        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-        nombre_archivo = f"sueldos_por_departamento_{timestamp}.png"
+        # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        # nombre_archivo = f"sueldos_por_departamento_{timestamp}.png"
+        nombre_archivo = f"sueldos_por_departamento.png"
         ruta_guardado = os.path.join(graficos_dir, nombre_archivo)
+
+        # Guardar el gráfico en el archivo
         plt.savefig(ruta_guardado, format='png', dpi=100)
 
-        # Convertir a base64
+        # ==========================================
+        # 6. CONVERTIR EL GRÁFICO A FORMATO BASE64
+        # ==========================================
         buffer = io.BytesIO()
         plt.savefig(buffer, format='png', dpi=100)
         buffer.seek(0)
         grafico_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
         plt.close()
 
+        # ==========================================
+        # 7. CREAR ESTADÍSTICAS ADICIONALES
+        # ==========================================
         stats = {
             'total_empleados': len(df),
             'salario_promedio': round(df['Salario'].mean(), 2),
@@ -129,10 +152,13 @@ class GraficaSueldosEmpleados(APIView):
             'total_departamentos': df.groupby('Departamento').size().to_dict(),
             'sueldo_max_departamento': df_resumen.idxmax(),
             'sueldo_min_departamento': df_resumen.idxmin(),
-            'ruta_grafico': ruta_guardado,
-            'nombre_grafico': nombre_archivo,
+            'ruta_grafico': ruta_guardado,  # Ruta donde se guardó el archivo
+            'nombre_grafico': nombre_archivo,  # Nombre del archivo
         }
 
+        # ==========================================
+        # 8. RESPUESTA SEGÚN TIPO DE PETICIÓN
+        # ==========================================
         if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
             return JsonResponse({
                 'grafico': grafico_base64,
