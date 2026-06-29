@@ -10,9 +10,9 @@
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 🛠️ 
 
-| Tecnología | Descripción |
+| Herramientas | Descripción |
 |------------|-------------|
 | ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) | Lenguaje de programación principal de alto nivel. |
 | ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white) | Entorno de desarrollo web enfocado en la velocidad y la seguridad. |
@@ -24,11 +24,11 @@
 
 ---
 
-## 📖 Descripción
+## 📖 
 
 Este repositorio contiene proyectos de ejemplo desarrollados (*código fuente y despliegue*) con Django, diseñados para demostrar la implementación de operaciones CRUD en aplicaciones web. Los proyectos están en constante evolución y sirven como base para aprender buenas prácticas y patrones de desarrollo.
 
-### Proyectos incluidos:
+
 
 | Proyecto | Descripción | Codigo | Despliegue|
 |----------|-------------|--------|----- |
@@ -38,7 +38,7 @@ Este repositorio contiene proyectos de ejemplo desarrollados (*código fuente y 
 
 ---
 
-## 🚀 Cómo empezar
+## 🚀
 
 1. Clona el repositorio:
  ```bash
