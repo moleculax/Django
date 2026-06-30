@@ -97,7 +97,7 @@ El sistema es una plataforma web desarrollada en **Django** que integra **autent
 
 | **Recurso** |  |
 | :--- | :--- |
-| 🌐 **URL** | [moleculax.pythonanywhere.com](https://moleculax.pythonanywhere.com/) |
+| 🌐 **URL** | [http://moleculax.pythonanywhere.com](https://moleculax.pythonanywhere.com/) |
 | 👤 **Usuario** | `admin` |
 | 🔑 **Contraseña** | `admin123` |
 
