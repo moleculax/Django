@@ -19,7 +19,7 @@ class AnalisisCSVView(APIView):
     @extend_schema(
         summary="Analisis CSV/Excel Generico",
         description="Muestra un reporte segun datos del archivo CSV o Excel elegido",
-        tags=["Analisis CSV"],
+        tags=["Analisis CSV/Excel Generico"],
     )
     def get(self, request, *args, **kwargs):
         return self._analizar_archivo(request)

@@ -30,7 +30,7 @@ urlpatterns = [
     path("api-auth/", include("rest_framework.urls")),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/home/', HomePageAPI.as_view(), name='api_home'),
+    # path('api/home/', HomePageAPI.as_view(), name='api_home'),
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
     path('redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),

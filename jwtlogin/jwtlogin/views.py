@@ -54,14 +54,14 @@ def logout_view(request):
 class HomePageAPI(APIView):
     permission_classes = [IsAuthenticated]
 
-    @extend_schema(
-        summary="Página de inicio API",
-        description="Endpoint de prueba que requiere autenticación JWT",
-        responses={
-            200: OpenApiResponse(description="Bienvenido"),
-            401: OpenApiResponse(description="No autenticado"),
-        }
-    )
+    # @extend_schema(
+    #     summary="Página de inicio API",
+    #     description="Endpoint de prueba que requiere autenticación JWT",
+    #     responses={
+    #         200: OpenApiResponse(description="Bienvenido"),
+    #         401: OpenApiResponse(description="No autenticado"),
+    #     }
+    # )
     def get(self, request):
         return Response({
             "mensaje": "Bienvenido a la API con JWT",
