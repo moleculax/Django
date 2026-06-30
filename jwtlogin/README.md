@@ -11,7 +11,10 @@
 
 ## 📋 Descripción general
 
-El sistema es una plataforma web desarrollada en **Django** que integra **autenticación JWT** y herramientas de **análisis de datos** con **Pandas** y **NumPy**. Permite visualizar, procesar y graficar datos provenientes de archivos **CSV**, **JSON** y bases de datos **SQLite**, todo documentado con **Swagger** para una fácil integración con APIs.
+El sistema es una plataforma web desarrollada en **Django** 
+que integra **autenticación JWT** y herramientas 
+de **análisis de datos** con **Pandas** y **NumPy**. 
+Permite seleccionar archivos  para analizar y visualizar, procesar y graficar datos provenientes de archivos **CSV**, **JSON** y bases de datos **SQLite**, todo documentado con **Swagger** para una fácil integración con APIs.
 
 ---
 
