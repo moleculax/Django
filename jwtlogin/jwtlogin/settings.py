@@ -83,6 +83,9 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',  # AGREGADO
 }
 
+# ===================================================
+# CONFIGURACIÓN DE SPECTACULAR (SWAGGER)
+# ===================================================
 SPECTACULAR_SETTINGS = {  # ← AGREGADO
     'TITLE': 'JWT Login API',
     'DESCRIPTION': 'API con autenticación JWT',
@@ -91,6 +94,9 @@ SPECTACULAR_SETTINGS = {  # ← AGREGADO
     'SWAGGER_UI_SETTINGS': {
         'persistAuthorization': True,
     },
+    'SCHEMA_PATH_PREFIX': '/api/',  # ← AGREGADO
+    'ENFORCE_NON_BLANK_FIELDS': True,  # ← AGREGADO
+    'DISCOVER_FUNCTIONS': True,  # ← AGREGADO
 }
 
 # Database
