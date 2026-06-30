@@ -305,3 +305,4 @@ cython_debug/
 *.rbi
 *.rbs
 *.rbs.cache
+local_files/
