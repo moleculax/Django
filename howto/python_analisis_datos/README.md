@@ -60,4 +60,4 @@ Cuando los datasets no caben cómodamente en la memoria RAM, el enfoque estánda
 
 
 
-[Elaborado por EjGomez](https://moleculaxapp.vercel.app/)
+[By EjGomez](https://moleculaxapp.vercel.app/)
