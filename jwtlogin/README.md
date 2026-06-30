@@ -92,15 +92,6 @@ El sistema es una plataforma web desarrollada en **Django** que integra **autent
 
 ---
 
-## 📋 Características
-
-- ✅ **Autenticación JWT** - Tokens de acceso y refresco
-- ✅ **Dashboard interactivo** - Visualización de tokens con botón de copiar
-- ✅ **Duración configurable** - Token de acceso (8 horas), Refresh (1 día)
-- ✅ **Documentación Swagger** - Endpoints documentados automáticamente
-- ✅ **Interfaz Bootstrap** - Diseño responsive y moderno
-- ✅ **Seguridad** - Tokens rotativos y blacklist
-
 ---
 ## Despliegue en
 
