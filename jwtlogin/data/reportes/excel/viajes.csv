@@ -1,0 +1,21 @@
+Vendedor;Producto;Tipo_Viaje;Destino;Precio;Comision;Fecha_Venta;Cliente;Metodo_Pago
+Ana Martínez;Paquete Europa 7 días;Internacional;París, Francia;1200;180;2026-06-01;Carlos Ruiz;Tarjeta Crédito
+Carlos Ruiz;Paquete Caribe 5 días;Internacional;Punta Cana, Rep. Dominicana;850;127.5;2026-06-01;María López;Efectivo
+María López;Paquete Nacional 3 días;Nacional;Cartagena, Colombia;450;67.5;2026-06-02;Laura Torres;Transferencia
+Pedro Gómez;Paquete Asia 10 días;Internacional;Bangkok, Tailandia;2100;315;2026-06-02;Jorge Ramírez;Tarjeta Débito
+Laura Torres;Paquete Nacional 2 días;Nacional;Santa Marta, Colombia;350;52.5;2026-06-03;Elena Castro;Efectivo
+Jorge Ramírez;Paquete Europa 5 días;Internacional;Roma, Italia;980;147;2026-06-03;David Mendoza;Tarjeta Crédito
+Elena Castro;Paquete Nacional 4 días;Nacional;San Andrés, Colombia;520;78;2026-06-04;Sofía Herrera;Efectivo
+David Mendoza;Paquete América 8 días;Internacional;Nueva York, EE.UU.;1500;225;2026-06-04;Javier Ortega;Transferencia
+Sofía Herrera;Paquete Nacional 1 día;Nacional;Villa de Leyva, Colombia;200;30;2026-06-05;Claudia Rojas;Tarjeta Débito
+Javier Ortega;Paquete Oriente 12 días;Internacional;Tokio, Japón;2800;420;2026-06-05;Andrés Silva;Efectivo
+Claudia Rojas;Paquete Nacional 3 días;Nacional;Medellín, Colombia;400;60;2026-06-06;Isabel Cruz;Tarjeta Crédito
+Andrés Silva;Paquete Europa 6 días;Internacional;Londres, Reino Unido;1100;165;2026-06-06;Ricardo Jiménez;Transferencia
+Isabel Cruz;Paquete Nacional 2 días;Nacional;Popayán, Colombia;280;42;2026-06-07;Patricia Mora;Efectivo
+Ricardo Jiménez;Paquete África 10 días;Internacional;Ciudad del Cabo, Sudáfrica;1900;285;2026-06-07;Fernando Díaz;Tarjeta Crédito
+Patricia Mora;Paquete Nacional 5 días;Nacional;Leticia, Colombia;650;97.5;2026-06-08;Gabriela Vargas;Efectivo
+Fernando Díaz;Paquete Oceanía 9 días;Internacional;Sídney, Australia;1750;262.5;2026-06-08;Manuel Salazar;Transferencia
+Gabriela Vargas;Paquete Nacional 4 días;Nacional;Eje Cafetero, Colombia;480;72;2026-06-09;Diana Paredes;Tarjeta Débito
+Manuel Salazar;Paquete Europa 7 días;Internacional;Ámsterdam, Países Bajos;1300;195;2026-06-09;Ana Martínez;Efectivo
+Diana Paredes;Paquete Nacional 2 días;Nacional;Barranquilla, Colombia;320;48;2026-06-10;Carlos Ruiz;Tarjeta Crédito
+Ana Martínez;Paquete América 6 días;Internacional;Miami, EE.UU.;950;142.5;2026-06-10;María López;Efectivo
