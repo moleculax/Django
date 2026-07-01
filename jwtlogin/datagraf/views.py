@@ -8,20 +8,20 @@ from django.conf import settings
 from django.shortcuts import render
 from django.views import View
 from django.http import JsonResponse
+from django.contrib.auth.mixins import LoginRequiredMixin  # ← AGREGAR
+from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.views import APIView
 from drf_spectacular.utils import extend_schema
 
 
-
-
-class ReporteEmpleadosView(View):
+# ===================================================
+# REPORTE EMPLEADOS (HTML - CON AUTENTICACIÓN POR SESIÓN)
+# ===================================================
+class ReporteEmpleadosView(LoginRequiredMixin, View):  # ← CAMBIADO
     template_name = "reportes/empleados.html"
 
-    @extend_schema(
-        summary="Reporte de empleados en HTML",
-        description="Muestra un reporte de empleados en formato HTML con tabla de datos",
-        tags=["Empleados"],
-    )
+    # @extend_schema ELIMINADO (no funciona con View)
+
     def get(self, request, *args, **kwargs):
         ruta_csv = os.path.join(settings.BASE_DIR, "data/reportes/excel/empleados.csv")
         df = pd.read_csv(ruta_csv, sep=";")
@@ -33,12 +33,17 @@ class ReporteEmpleadosView(View):
         return render(request, self.template_name, {"tabla_reporte": tabla_html})
 
 
+# ===================================================
+# REPORTE EMPLEADOS JSON (API - CON JWT)
+# ===================================================
 class ReporteEmpleadosCSVToJSON(APIView):
     """
     Endpoint que convierte CSV a JSON y lo retorna como respuesta
+    Requiere autenticación JWT
     """
+    permission_classes = [IsAuthenticated]  # ← SE MANTIENE
 
-    @extend_schema(
+    @extend_schema(  # ← SE MANTIENE
         summary="Lista de empleados en JSON",
         description="Convierte el archivo CSV de empleados a JSON y lo retorna como respuesta",
         tags=["Empleados"],
@@ -48,7 +53,6 @@ class ReporteEmpleadosCSVToJSON(APIView):
         ruta_json = os.path.join(settings.BASE_DIR, "data/reportes/json/empleados.json")
         df = pd.read_csv(ruta_csv, sep=";")
         data = df.to_json(orient='records', lines=False)
-        # almacenaJson = df.to_json(ruta_json, orient='records', lines=False)  # Esto no funciona así
         return JsonResponse(
             data,
             safe=False,
@@ -57,20 +61,19 @@ class ReporteEmpleadosCSVToJSON(APIView):
 
 
 # ===================================================
-# GRAFICO PROMEDIO DE SUELDO POR DEPARTAMENTO
+# GRÁFICO PROMEDIO DE SUELDO POR DEPARTAMENTO (HTML)
 # ===================================================
-class GraficaSueldosEmpleados(APIView):
+class GraficaSueldosEmpleados(LoginRequiredMixin, View):  # ← CAMBIADO
     """
     Vista que genera gráficos de sueldos de empleados
+    Requiere autenticación por sesión
     """
+    template_name = "reportes/grafico_empleados.html"
 
-    @extend_schema(
-        summary="Gráfico de sueldos de empleados",
-        description="Genera un gráfico de líneas con los sueldos promedio por departamento",
-        tags=["Reporte Grafico"],
-    )
+    # permission_classes = [IsAuthenticated] ELIMINADO
+    # @extend_schema ELIMINADO
+
     def get(self, request, *args, **kwargs):
-        template_grafica = "reportes/grafico_empleados.html"
         ruta_csv = os.path.join(settings.BASE_DIR, "data/reportes/excel/empleados.csv")
         df = pd.read_csv(ruta_csv, sep=";")
         df_resumen = df.groupby('Departamento')['Salario'].mean().round(2).sort_values(ascending=False)
@@ -120,35 +123,27 @@ class GraficaSueldosEmpleados(APIView):
             'nombre_grafico': nombre_archivo,
         }
 
-        if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-            return JsonResponse({
-                'grafico': grafico_base64,
-                'stats': stats,
-                'datos': df.to_dict(orient='records')
-            }, safe=False)
-
         context = {
             'grafico': grafico_base64,
             'stats': stats,
         }
-        return render(request, template_grafica, context)
+        return render(request, self.template_name, context)
 
 
 # ==========================================
-# RELACIÓN EXPERIENCIA VS SALARIO
+# RELACIÓN EXPERIENCIA VS SALARIO (HTML)
 # ==========================================
-class ExperienciaSalarioView(APIView):
+class ExperienciaSalarioView(LoginRequiredMixin, View):  # ← CAMBIADO
     """
     Vista que genera un gráfico de dispersión entre experiencia y salario
+    Requiere autenticación por sesión
     """
+    template_name = "reportes/experiencia_salario.html"
 
-    @extend_schema(
-        summary="Relación experiencia vs salario",
-        description="Muestra un gráfico de dispersión con la relación entre años de experiencia y salario",
-        tags=["Reporte Grafico"],
-    )
+    # permission_classes = [IsAuthenticated] ELIMINADO
+    # @extend_schema ELIMINADO
+
     def get(self, request, *args, **kwargs):
-        template_grafica = "reportes/experiencia_salario.html"
         ruta_csv = os.path.join(settings.BASE_DIR, "data/reportes/excel/empleados.csv")
         df = pd.read_csv(ruta_csv, sep=";")
 
@@ -162,7 +157,6 @@ class ExperienciaSalarioView(APIView):
             plt.scatter(datos['Experiencia'], datos['Salario'],
                         label=dept, color=colores[i], s=80, alpha=0.7, edgecolor='black')
 
-        # Línea de tendencia
         from scipy import stats
         x = df['Experiencia'].dropna()
         y = df['Salario'].dropna()
@@ -202,29 +196,29 @@ class ExperienciaSalarioView(APIView):
             'grafico': grafico_base64,
             'stats': stats_datos,
         }
-        return render(request, template_grafica, context)
+        return render(request, self.template_name, context)
 
 
 # ===================================================
-# DASHBOARD DE GRÁFICOS (TODAS LAS GRÁFICAS EN UN SOLO HTML)
+# DASHBOARD DE GRÁFICOS (HTML)
 # ===================================================
-class DashboardGraficosView(APIView):
+class DashboardGraficosView(LoginRequiredMixin, View):  # ← CAMBIADO
     """
     Vista que genera y muestra todas las gráficas en un solo HTML
+    Requiere autenticación por sesión
     """
+    template_name = "reportes/dashboard_graficos.html"
 
-    @extend_schema(
-        summary="Dashboard de gráficos",
-        description="Genera y muestra todas las gráficas de empleados en un solo HTML",
-        tags=["Reporte Grafico"],
-    )
+    # permission_classes = [IsAuthenticated] ELIMINADO
+    # @extend_schema ELIMINADO
+
     def get(self, request, *args, **kwargs):
         template_grafica = "reportes/dashboard_graficos.html"
         ruta_csv = os.path.join(settings.BASE_DIR, "data/reportes/excel/empleados.csv")
         df = pd.read_csv(ruta_csv, sep=";")
 
         # ==========================================
-        # 1. GRÁFICO 1: SUELDOS PROMEDIO POR DEPARTAMENTO (LÍNEAS)
+        # 1. GRÁFICO 1: SUELDOS PROMEDIO POR DEPARTAMENTO
         # ==========================================
         df_resumen = df.groupby('Departamento')['Salario'].mean().round(2).sort_values(ascending=False)
 
@@ -261,21 +255,18 @@ class DashboardGraficosView(APIView):
         plt.close()
 
         # ==========================================
-        # 2. GRÁFICO 2: SALARIO PROMEDIO POR RANGO DE EXPERIENCIA (BARRAS HORIZONTALES)
+        # 2. GRÁFICO 2: SALARIO POR RANGO DE EXPERIENCIA
         # ==========================================
-        # Crear rangos de experiencia
         bins = [0, 5, 10, 15, 20, 25, 30]
         labels = ['0-5 años', '6-10 años', '11-15 años', '16-20 años', '21-25 años', '26+ años']
         df['RangoExperiencia'] = pd.cut(df['Experiencia'], bins=bins, labels=labels, right=False)
 
-        # Calcular salario promedio por rango de experiencia
         df_rango = df.groupby('RangoExperiencia')['Salario'].mean().round(2).sort_values(ascending=True)
 
         plt.figure(figsize=(12, 7))
         colores = plt.cm.Blues(np.linspace(0.4, 0.9, len(df_rango)))
         bars = plt.barh(df_rango.index, df_rango.values, color=colores, edgecolor='black', height=0.6)
 
-        # Agregar valores al final de cada barra
         for bar in bars:
             width = bar.get_width()
             plt.text(width + 50, bar.get_y() + bar.get_height()/2.,
@@ -287,7 +278,6 @@ class DashboardGraficosView(APIView):
         plt.grid(axis='x', linestyle='--', alpha=0.6)
         plt.tight_layout()
 
-        # Guardar gráfico 2
         nombre_archivo_2 = "experiencia_salario.png"
         ruta_guardado_2 = os.path.join(graficos_dir, nombre_archivo_2)
         plt.savefig(ruta_guardado_2, format='png', dpi=100)
@@ -299,7 +289,7 @@ class DashboardGraficosView(APIView):
         plt.close()
 
         # ==========================================
-        # 3. ESTADÍSTICAS GENERALES
+        # 3. ESTADÍSTICAS
         # ==========================================
         correlacion = df['Experiencia'].corr(df['Salario'])
         stats = {
@@ -316,9 +306,6 @@ class DashboardGraficosView(APIView):
             'experiencia_promedio': round(df['Experiencia'].mean(), 1),
         }
 
-        # ==========================================
-        # 4. CONTEXTO PARA EL TEMPLATE
-        # ==========================================
         context = {
             'grafico1': grafico1_base64,
             'grafico2': grafico2_base64,
