@@ -110,7 +110,7 @@ conexion.close()
 # 8. MOSTRAR LOS DATOS
 # ========================================================
 print("=" * 60)
-print("📋 LISTA DE CLIENTES")
+print("LISTA DE CLIENTES")
 print("=" * 60)
 for objeto_cuenta in array_de_objetos:
     print(objeto_cuenta.mostrar_ficha_completa())
@@ -122,7 +122,7 @@ print(f"\n✅ Total de objetos en el array: {len(array_de_objetos)}")
 # 9. GRÁFICO DE SALDOS POR CLIENTE
 # ========================================================
 print("\n" + "=" * 60)
-print("📊 GENERANDO GRÁFICO DE SALDOS...")
+print("GENERANDO GRÁFICO DE SALDOS...")
 print("=" * 60)
 
 # Extraer datos para el gráfico
@@ -142,7 +142,7 @@ for bar, saldo in zip(bars, saldos):
     plt.text(bar.get_x() + bar.get_width()/2., bar.get_height() + 50,
              f'${saldo:,.2f}', ha='center', va='bottom', fontsize=9, fontweight='bold')
 
-plt.title('💰 Saldos por Cliente', fontsize=16, fontweight='bold')
+plt.title('Saldos por Cliente', fontsize=16, fontweight='bold')
 plt.xlabel('Cliente', fontsize=12)
 plt.ylabel('Saldo ($)', fontsize=12)
 plt.xticks(rotation=45, ha='right')
@@ -161,7 +161,7 @@ plt.tight_layout()
 # Guardar gráfico
 os.makedirs('graficos', exist_ok=True)
 plt.savefig('graficos/saldos_clientes.png', dpi=100)
-print("✅ Gráfico guardado en: graficos/saldos_clientes.png")
+print("Gráfico guardado en: graficos/saldos_clientes.png")
 
-# Mostrar gráfico
+# Muestra gráfico
 plt.show()
