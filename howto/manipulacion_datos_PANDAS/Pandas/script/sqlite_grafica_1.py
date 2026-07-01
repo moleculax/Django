@@ -1,5 +1,15 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Jul  1 08:47:13 2026
+
+@author: moleculax
+"""
+
 import os
 import sqlite3
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 # ========================================================
@@ -99,7 +109,59 @@ conexion.close()
 # ========================================================
 # 8. MOSTRAR LOS DATOS
 # ========================================================
+print("=" * 60)
+print("📋 LISTA DE CLIENTES")
+print("=" * 60)
 for objeto_cuenta in array_de_objetos:
     print(objeto_cuenta.mostrar_ficha_completa())
 
 print(f"\n✅ Total de objetos en el array: {len(array_de_objetos)}")
+
+
+# ========================================================
+# 9. GRÁFICO DE SALDOS POR CLIENTE
+# ========================================================
+print("\n" + "=" * 60)
+print("📊 GENERANDO GRÁFICO DE SALDOS...")
+print("=" * 60)
+
+# Extraer datos para el gráfico
+nombres = [obj.titular for obj in array_de_objetos]
+saldos = [obj.saldo for obj in array_de_objetos]
+estados = [obj.activa for obj in array_de_objetos]
+
+# Colores: verde para activos, rojo para inactivos
+colores = ['#4CAF50' if estado else '#F44336' for estado in estados]
+
+# Crear gráfico de barras
+plt.figure(figsize=(10, 6))
+bars = plt.bar(nombres, saldos, color=colores, edgecolor='black', linewidth=1.2)
+
+# Agregar valores encima de las barras
+for bar, saldo in zip(bars, saldos):
+    plt.text(bar.get_x() + bar.get_width()/2., bar.get_height() + 50,
+             f'${saldo:,.2f}', ha='center', va='bottom', fontsize=9, fontweight='bold')
+
+plt.title('💰 Saldos por Cliente', fontsize=16, fontweight='bold')
+plt.xlabel('Cliente', fontsize=12)
+plt.ylabel('Saldo ($)', fontsize=12)
+plt.xticks(rotation=45, ha='right')
+plt.grid(axis='y', linestyle='--', alpha=0.3)
+
+# Agregar leyenda personalizada
+from matplotlib.patches import Patch
+legend_elements = [
+    Patch(facecolor='#4CAF50', label='🟢 Activa'),
+    Patch(facecolor='#F44336', label='🔴 Suspendida')
+]
+plt.legend(handles=legend_elements, loc='upper right')
+
+plt.tight_layout()
+
+# Guardar gráfico
+os.makedirs('graficos', exist_ok=True)
+plt.savefig('graficos/saldos_clientes.png', dpi=100)
+print("✅ Gráfico guardado en: graficos/saldos_clientes.png")
+
+# Mostrar gráfico
+plt.show()
