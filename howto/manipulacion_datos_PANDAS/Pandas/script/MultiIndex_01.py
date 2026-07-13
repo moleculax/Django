@@ -34,3 +34,4 @@ print(df_tienda.xs('En tienda', level='Canal_Ventas'))
 print("Ordenamiento")
 df_ordenamiento = df_tienda.sort_index(axis=0, level=['Categoria', 'Producto'], ascending=[True, True])
 print(df_ordenamiento)
+
