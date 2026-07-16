@@ -1,11 +1,13 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - Blog</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         body { padding-top: 70px; }
         .stat-card { transition: transform 0.3s; cursor: default; }
@@ -14,24 +16,26 @@
         .sidebar .nav-link { color: #333; }
         .sidebar .nav-link:hover { background: #e9ecef; }
         .sidebar .nav-link.active { background: #0d6efd; color: white; }
+        .btn-group-actions {
+            width: 160px;
+            flex-shrink: 0;
+        }
+        .btn-group-actions .btn {
+            width: 80px;
+            flex: 0 0 80px;
+            text-align: center;
+            font-size: 13px;
+            padding: 5px 0;
+        }
     </style>
 </head>
 <body>
 
-    <!-- ========================================== -->
-    <!-- NAVBAR FIJO                                -->
-    <!-- ========================================== -->
     {% include "includes/navbar.html" %}
 
-    <!-- ========================================== -->
-    <!-- DASHBOARD                                  -->
-    <!-- ========================================== -->
     <div class="container-fluid">
         <div class="row">
 
-            <!-- ========================================== -->
-            <!-- SIDEBAR                                    -->
-            <!-- ========================================== -->
             <div class="col-md-2 sidebar p-3">
                 <h5 class="text-center text-primary mb-3">
                     <i class="bi bi-speedometer2"></i> Panel
@@ -43,145 +47,97 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-file-earmark-text"></i> Posts
-                            <span class="badge bg-primary float-end">12</span>
+                        <a class="nav-link" href="/postearArticulos">
+                            <i class="bi bi-file-earmark-text"></i> Postear Artículo
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-tags"></i> Categorías
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-chat"></i> Comentarios
-                            <span class="badge bg-warning float-end">5</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-people"></i> Usuarios
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <i class="bi bi-gear"></i> Configuración
+                        <a class="nav-link" href="/list-articulos">
+                            <i class="bi bi-tags"></i> Ver todos los Post
                         </a>
                     </li>
                 </ul>
             </div>
 
-            <!-- ========================================== -->
-            <!-- CONTENIDO PRINCIPAL                        -->
-            <!-- ========================================== -->
             <div class="col-md-10 p-4">
 
                 <h2 class="mb-4">Bienvenido, {{ user.username }}</h2>
 
-                <!-- Tarjetas de estadísticas -->
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
                 <div class="row g-4 mb-4">
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <div class="card stat-card shadow border-primary">
                             <div class="card-body text-center">
-                                <h1 class="text-primary">15</h1>
-                                <p class="text-muted">Total Posts</p>
+                                <h1 class="text-primary">{{ conteo.totalPost|default:0 }}</h1>
+                                <p class="text-muted">Total Posts/Artículos</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-6">
                         <div class="card stat-card shadow border-success">
                             <div class="card-body text-center">
-                                <h1 class="text-success">8</h1>
-                                <p class="text-muted">Publicados</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card stat-card shadow border-warning">
-                            <div class="card-body text-center">
-                                <h1 class="text-warning">7</h1>
-                                <p class="text-muted">Borradores</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card stat-card shadow border-info">
-                            <div class="card-body text-center">
-                                <h1 class="text-info">23</h1>
-                                <p class="text-muted">Comentarios</p>
+                                <h1 class="text-success">{{ datosUltimosPost|length|default:0 }}</h1>
+                                <p class="text-muted">Últimos Artículos</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Últimos posts y actividad reciente -->
                 <div class="row g-4">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card shadow">
                             <div class="card-header bg-light">
-                                <i class="bi bi-file-earmark-text"></i> Últimos Posts
+                                <i class="bi bi-file-earmark-text"></i> Últimos Artículos
                             </div>
                             <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <strong>Mi primer post</strong>
-                                            <span class="badge bg-success ms-2">Publicado</span>
-                                            <br>
-                                            <small class="text-muted">Hace 2 horas</small>
-                                        </div>
-                                        <a href="#" class="btn btn-sm btn-outline-primary">Editar</a>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <strong>Introducción a Django</strong>
-                                            <span class="badge bg-warning ms-2">Borrador</span>
-                                            <br>
-                                            <small class="text-muted">Hace 5 horas</small>
-                                        </div>
-                                        <a href="#" class="btn btn-sm btn-outline-primary">Editar</a>
-                                    </li>
-                                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        <div>
-                                            <strong>Tips para bloggers</strong>
-                                            <span class="badge bg-success ms-2">Publicado</span>
-                                            <br>
-                                            <small class="text-muted">Ayer</small>
-                                        </div>
-                                        <a href="#" class="btn btn-sm btn-outline-primary">Editar</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="card-footer text-center">
-                                <a href="#" class="btn btn-primary btn-sm">Ver todos los posts</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="card shadow">
-                            <div class="card-header bg-light">
-                                <i class="bi bi-clock-history"></i> Actividad Reciente
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">
-                                        <i class="bi bi-person text-primary"></i> Juan comentó en "Mi primer post"
-                                        <br>
-                                        <small class="text-muted">Hace 1 hora</small>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="bi bi-file-earmark text-success"></i> Nuevo post: "Introducción a Django"
-                                        <br>
-                                        <small class="text-muted">Hace 3 horas</small>
-                                    </li>
-                                    <li class="list-group-item">
-                                        <i class="bi bi-person text-primary"></i> María se registró
-                                        <br>
-                                        <small class="text-muted">Hace 5 horas</small>
-                                    </li>
-                                </ul>
+                                {% if datosUltimosPost %}
+                                    <ul class="list-group list-group-flush">
+                                        {% for articulo in datosUltimosPost %}
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                <div>
+                                                    <strong>{{ articulo.titular }}</strong>
+                                                    <span class="badge bg-success ms-2">Publicado</span>
+                                                    <br>
+                                                    <small class="text-muted">
+                                                        <i class="bi bi-clock"></i> {{ articulo.tiempo_publicado }}
+                                                    </small>
+                                                    <br>
+                                                    <small class="text-muted">
+                                                        <i class="bi bi-calendar"></i> {{ articulo.fecha_publicacion }}
+                                                    </small>
+                                                    <br>
+                                                    <small class="text-muted">
+                                                        <i class="bi bi-tag"></i> {{ articulo.categoria }}
+                                                    </small>
+                                                </div>
+                                                <div class="btn-group btn-group-actions" role="group">
+                                                    <a href="/articulo/update/{{ articulo.id }}/" class="btn btn-sm btn-outline-primary">
+                                                        <i class="bi bi-pencil"></i> Editar
+                                                    </a>
+                                                    <button class="btn btn-sm btn-outline-danger" onclick="confirmarEliminacion({{ articulo.id }})">
+                                                        <i class="bi bi-trash"></i> Eliminar
+                                                    </button>
+                                                </div>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                {% else %}
+                                    <div class="text-center py-4">
+                                        <i class="bi bi-file-earmark-text" style="font-size: 48px; color: #ccc;"></i>
+                                        <p class="text-muted mt-2">No tienes artículos publicados</p>
+                                        <a href="/postearArticulos" class="btn btn-primary">
+                                            <i class="bi bi-plus"></i> Crear primer artículo
+                                        </a>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -191,8 +147,37 @@
         </div>
     </div>
 
-    <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function confirmarEliminacion(id) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#6c757d',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = '/articulo/delete/' + id + '/';
+                }
+            });
+        }
+
+        {% if messages %}
+            {% for message in messages %}
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Éxito',
+                    text: '{{ message }}',
+                    timer: 3000,
+                    showConfirmButton: false
+                });
+            {% endfor %}
+        {% endif %}
+    </script>
 
 </body>
 </html>
