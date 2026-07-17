@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 # PARA PUBLICAR EN pythonanywhere.com
 # DEBUG = False # CAMBIAR A True para desarrollo
 # Dominio de PythonAnywhere
-# ALLOWED_HOSTS = ['moleculax.pythonanywhere.com', 'www.moleculax.pythonanywhere.com']
+# ALLOWED_HOSTS = ['moleculax.pythonanywhere.com', 'www.moleculax.pythonanywhere.com','www.anamucpro.online','anamucpro.online','railway.app','jwtloginpro-production.up.railway.app']
 
 # Application definition
 
@@ -162,4 +162,14 @@ SIMPLE_JWT = {
 # AGREGADO Directorio raíz donde Django buscará archivos estáticos en desarrollo
 STATICFILES_DIRS = [
     BASE_DIR / "static",
+]
+
+# ESTO LO AGREGUE PARA USAR DINIOS PROPIOS Y SECUNDARIOS
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.anamucpro.online',
+    'https://anamucpro.online',
+    'https://railway.app',
+    'https://moleculax.pythonanywhere.com',
+    'https://www.moleculax.pythonanywhere.com'
+    'http://localhost:8000',
 ]
