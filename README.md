@@ -10,7 +10,15 @@
 
 ---
 
-## 🛠️ 
+````
+ ____  _                           _____         _   _             
+|  _ \(_) __ _ _ __   __ _  ___   |_   _|__  ___| |_(_)_ __   __ _ 
+| | | | |/ _` | '_ \ / _` |/ _ \    | |/ _ \/ __| __| | '_ \ / _` |
+| |_| | | (_| | | | | (_| | (_) |   | |  __/\__ \ |_| | | | | (_| |
+|____// |\__,_|_| |_|\__, |\___/    |_|\___||___/\__|_|_| |_|\__, |
+    |__/             |___/                                   |___/ 
+
+ ```` 
 
 | Herramientas | Descripción |
 |------------|-------------|
@@ -24,7 +32,7 @@
 
 ---
 
-## 📖 
+
 
 Este repositorio contiene proyectos de ejemplo desarrollados (*código fuente y despliegue*) con Django, diseñados para demostrar la implementación de operaciones CRUD en aplicaciones web. Los proyectos están en constante evolución y sirven como base para aprender buenas prácticas y patrones de desarrollo.
 
