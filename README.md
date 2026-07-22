@@ -34,7 +34,7 @@ Este repositorio contiene proyectos de ejemplo desarrollados (*código fuente y 
 | :--- | :--- | :--- | :--- |
 | **HowTo** | Códigos Pandas / Teoría Django y Pandas | [Ver código](https://github.com/moleculax/Django/tree/main/howto) | — |
 | **JWT Login Data** | Desarrollo en Django/Pandas. Incluye un dashboard con visualización, análisis de datos y gráficas.<br><br>👤 **Usuario:** <span style="color: green;">`admin`</span><br>🔐 **Password:** <span style="color: blue;">`admin123`</span> | [Ver código](https://github.com/moleculax/Django/tree/main/jwtlogin) | [JwtloginData](https://moleculax.pythonanywhere.com/) 🚀 |
-| **salesAnalytics** | Análisis estadístico de archivos CSV y XLS. | [Ver código](https://github.com/moleculax/salesAnalytics) | [salesAnalytics](https://pdfhand2.pythonanywhere.com/) 🚀 |
+| **salesAnalytics** | Análisis estadístico de archivos CSV y XLS. <br><br>👤 **Usuario:** <span style="color: green;">`admin`</span><br>🔐 **Password:** <span style="color: blue;">`admin123`</span> | [Ver código](https://github.com/moleculax/salesAnalytics) | [salesAnalytics](https://pdfhand2.pythonanywhere.com/) 🚀 |
 
 
 ---
