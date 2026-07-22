@@ -29,16 +29,16 @@
 Este repositorio contiene proyectos de ejemplo desarrollados (*código fuente y despliegue*) con Django, diseñados para demostrar la implementación de operaciones CRUD en aplicaciones web. Los proyectos están en constante evolución y sirven como base para aprender buenas prácticas y patrones de desarrollo.
 
 
-
+[![Códigos En Desarrollo](https://img.shields.io/badge/C%C3%B3digos%20En%20Desarrollo-orange?style=for-the-badge)](https://moleculaxapp.vercel.app/github)
 | Proyecto | Descripción | Código | Despliegue |
 | :--- | :--- | :--- | :--- |
-| **HowTo** | Códigos Pandas / Teoría Django y Pandas | [Ver código](https://github.com/moleculax/Django/tree/main/howto) | — |
-| **JWT Login Data** | Desarrollo en Django/Pandas. Incluye un dashboard con visualización, análisis de datos y gráficas.<br><br>👤 **Usuario:** <span style="color: green;">`admin`</span><br>🔐 **Password:** <span style="color: blue;">`admin123`</span> | [Ver código](https://github.com/moleculax/Django/tree/main/jwtlogin) | [JwtloginData](https://moleculax.pythonanywhere.com/) 🚀 |
-| **salesAnalytics** | Análisis estadístico de archivos CSV y XLS. <br><br>👤 **Usuario:** <span style="color: green;">`admin`</span><br>🔐 **Password:** <span style="color: blue;">`admin123`</span> | [Ver código](https://github.com/moleculax/salesAnalytics) | [salesAnalytics](https://pdfhand2.pythonanywhere.com/) 🚀 |
+| **HowTo** | Códigos Pandas / Teoría Django y Pandas | [![Código](https://img.shields.io/badge/C%C3%B3digo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/moleculax/Django/tree/main/howto) | — |
+| **JWT Login Data** | Desarrollo en Django/Pandas. Incluye un dashboard con visualización, análisis de datos y gráficas.<br><br>👤 **Usuario:** <span style="color: green;">`admin`</span><br>🔐 **Password:** <span style="color: blue;">`admin123`</span> | [![Código](https://img.shields.io/badge/C%C3%B3digo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/moleculax/Django/tree/main/jwtlogin) | [![Despliegue](https://img.shields.io/badge/Despliegue-2ea44f?style=for-the-badge&logo=rocket&logoColor=white)](https://moleculax.pythonanywhere.com/) |
+| **salesAnalytics** | Análisis estadístico de archivos CSV y XLS.<br><br>👤 **Usuario:** <span style="color: green;">`admin`</span><br>🔐 **Password:** <span style="color: blue;">`admin123`</span> | [![Código](https://img.shields.io/badge/C%C3%B3digo-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/moleculax/salesAnalytics) | [![Despliegue](https://img.shields.io/badge/Despliegue-2ea44f?style=for-the-badge&logo=rocket&logoColor=white)](https://pdfhand2.pythonanywhere.com/) |
 
 
 ---
-[![Códigos En Desarrollo](https://img.shields.io/badge/C%C3%B3digos%20En%20Desarrollo-orange?style=for-the-badge)](https://moleculaxapp.vercel.app/github)
+
 
 
 [![Powered by Moleculax](https://img.shields.io/badge/Powered%20by-@moleculax-0d6efd?style=for-the-badge&logo=vercel&logoColor=white&labelColor=green)](https://moleculaxapp.vercel.app/)
