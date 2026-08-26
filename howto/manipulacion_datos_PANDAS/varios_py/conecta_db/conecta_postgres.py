@@ -91,7 +91,9 @@ ORDER BY v.id_venta ASC;
         fecha = datetime.now().strftime('%Y%m%d')
         nombre_archivo = f'{path}/ventas_{fecha}.csv'
         df.to_csv(nombre_archivo, index=False, encoding='utf-8-sig')
+        df.to_excel(f'{path}/ventas_{fecha}.xlsx', index=False)
         print(f'CSV creado: {nombre_archivo}')
+        print(f'Excel creado: {nombre_archivo}')
         # INICIO GRAFICA DE DATOS
         graficos = GraficoDatos()
         graficos.grafica(nombre_archivo)

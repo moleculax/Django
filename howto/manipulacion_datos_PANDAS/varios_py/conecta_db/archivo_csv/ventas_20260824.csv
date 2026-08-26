@@ -1,0 +1,15 @@
+﻿nombre_categoria,descripcion_categoria,nombre_menu,folio,fecha,nombre_dia,mes,anio,subtotal,impuestos,total,nombre_usuario
+Bebidas,Bebidas alcohólicas y sin alcohol,Coca Cola,FOL-20260307164920154-18,07-03-2026,Sábado,3,2026,3000.00,0.00,3000.00,root / admin
+Bebidas,Bebidas alcohólicas y sin alcohol,Agua Mineral 500cc,FOL-20260307165012762-894,07-03-2026,Sábado,3,2026,2300.00,0.00,2300.00,root / admin
+Bebidas,Bebidas alcohólicas y sin alcohol,Agua 1000 Cc,FOL-20260307165012762-894,07-03-2026,Sábado,3,2026,4500.00,0.00,4500.00,root / admin
+Postres,Dulces y postres para finalizar la comida,Helados Chocolate Y Frutillas,FOL-20260311150042595-362,11-03-2026,Miércoles,3,2026,5000.00,0.00,5000.00,root / admin
+Postres,Dulces y postres para finalizar la comida,Salado Y Dulce,FOL-20260311150042595-362,11-03-2026,Miércoles,3,2026,3600.00,0.00,3600.00,root / admin
+Bebidas,Bebidas alcohólicas y sin alcohol,Agua Mineral 500cc,FOL-20260315121624374-465,15-03-2026,Domingo,3,2026,2300.00,0.00,2300.00,root / admin
+Bebidas,Bebidas alcohólicas y sin alcohol,Agua Mineral 500cc,FOL-20260321204630225-615,21-03-2026,Sábado,3,2026,2300.00,0.00,2300.00,root / admin
+Bebidas,Bebidas alcohólicas y sin alcohol,Cerveza Polar,FOL-20260321204630225-615,21-03-2026,Sábado,3,2026,5500.00,0.00,5500.00,root / admin
+Especialidades del Día,Platos recomendados o especiales según disponibilidad del día,Asado De Cordero,FOL-20260322100928664-335,22-03-2026,Domingo,3,2026,20000.00,0.00,20000.00,root / admin
+Especialidades del Día,Platos recomendados o especiales según disponibilidad del día,Pasta A La Carbonada,FOL-20260322100928664-335,22-03-2026,Domingo,3,2026,5600.00,0.00,5600.00,root / admin
+Cafeteria,Opciones relacionadas con cafererias,Expreso,FOL-20260322100928664-335,22-03-2026,Domingo,3,2026,5600.00,0.00,5600.00,root / admin
+Cafeteria,Opciones relacionadas con cafererias,Cortado,FOL-20260322100928664-335,22-03-2026,Domingo,3,2026,3200.00,0.00,3200.00,root / admin
+Bebidas,Bebidas alcohólicas y sin alcohol,Cerveza Polar,FOL-20260322100941291-777,22-03-2026,Domingo,3,2026,5500.00,0.00,5500.00,root / admin
+Bebidas,Bebidas alcohólicas y sin alcohol,Agua Mineral 500cc,FOL-20260322100941291-777,22-03-2026,Domingo,3,2026,2300.00,0.00,2300.00,root / admin
